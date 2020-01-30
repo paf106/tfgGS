@@ -36,8 +36,8 @@ function goToAdminPage(){
 
 // JAVASCRIPT REGISTRO
 function checkPassword(){
-	var pass = document.getElementById('passwordSign-in').value;
-	var repeatPass = document.getElementById('repeatPasswordSign-in').value;
+	var pass = document.getElementById('passwordSign-up').value;
+	var repeatPass = document.getElementById('repeatPasswordSign-up').value;
 	if (pass != repeatPass){
 		alert('Passwords are not the same');
 
@@ -50,60 +50,60 @@ function checkPassword(){
 }
 
 function progressBarUser(){
-	var userSign_in = document.getElementById('userSign-in').value;
+	var userSign_up = document.getElementById('userSign-up').value;
 	var barra = document.getElementById('bar').value;
 
-	if (userSign_in != ""){
+	if (userSign_up != ""){
 		document.getElementById('bar').value = barra+1;
 	}else{
 		document.getElementById('bar').value = barra-1;
 	}
 }
 function progressBarPassword(){
-	var passwordSign_in = document.getElementById('passwordSign-in').value;
+	var passwordSign_up = document.getElementById('passwordSign-up').value;
 	var barra = document.getElementById('bar').value;
 
-	if (passwordSign_in != ""){
+	if (passwordSign_up != ""){
 		document.getElementById('bar').value = barra+1;
 	}else{
 		document.getElementById('bar').value = barra-1;
 	}
 }
 function progressBarRepeatPassword(){
-	var repeatPasswordSign_in = document.getElementById('repeatPasswordSign-in').value;
+	var repeatPasswordSign_up = document.getElementById('repeatPasswordSign-up').value;
 	var barra = document.getElementById('bar').value;
 
-	if (repeatPasswordSign_in != ""){
+	if (repeatPasswordSign_up != ""){
 		document.getElementById('bar').value = barra+1;
 	}else{
 		document.getElementById('bar').value = barra-1;
 	}
 }
 function progressBarMail(){
-	var mailSign_in = document.getElementById('mailSign-in').value;
+	var mailSign_up = document.getElementById('mailSign-up').value;
 	var barra = document.getElementById('bar').value;
 
-	if (mailSign_in != ""){
+	if (mailSign_up != ""){
 		document.getElementById('bar').value = barra+1;
 	}else{
 		document.getElementById('bar').value = barra-1;
 	}
 }
 function progressBarName(){
-	var nameSign_in = document.getElementById('nameSign-in').value;
+	var nameSign_up = document.getElementById('nameSign-up').value;
 	var barra = document.getElementById('bar').value;
 
-	if (nameSign_in != ""){
+	if (nameSign_up != ""){
 		document.getElementById('bar').value = barra+1;
 	}else{
 		document.getElementById('bar').value = barra-1;
 	}
 }
 function progressBarSurname(){
-	var surnameSign_in = document.getElementById('surnameSign-in').value;
+	var surnameSign_up = document.getElementById('surnameSign-up').value;
 	var barra = document.getElementById('bar').value;
 
-	if (surnameSign_in != ""){
+	if (surnameSign_up != ""){
 		document.getElementById('bar').value = barra+1;
 	}else{
 		document.getElementById('bar').value = barra-1;
