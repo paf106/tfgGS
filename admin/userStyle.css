@@ -45,10 +45,13 @@ aside{
 	width: 10%;
 	float: left;
 	background-color: #3c3c3c;
-	height:94%;
+	height:89%;
 }
 aside #contenedorBotones{
-	padding: 10%;
+	padding: 19%;
+}
+aside #contenedorBotones span{
+	color: #e0e0e0;
 }
 aside div{
 	text-align: center;
@@ -58,13 +61,26 @@ aside hr{
 }
 aside div img{
 	width: 30px;
+	cursor: pointer;
 
 }
 section{
 	float: right;
 	width: 90%;
-	height: 94%;
+	height: 89%;
 	background-color: #ffff;
+}
+footer{
+	position:fixed;
+	display: flex;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	background-color: #4777ff;
+	height: 5%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 .black{
 	color: black;
