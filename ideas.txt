@@ -1,0 +1,37 @@
+En sign-in.html por cada campo del formulario añadir una umagen relacionada
+	Buscar en estas paginas:
+		- https://feathericons.com
+		- https://icons8.com
+		- https://iconmonstr.com
+		- https://material.io/resources/icons/
+
+- En sign-in.html hay que hacer el javascript de la progress bar
+
+En admin-html:
+	- <a href="#">Usuarios</a>
+		
+		En el apartado usuarios vamos a tener en el aside:
+			-Botón para crear usuarios
+			-Botón para modificar usuarios
+			-Botón para eliminar usuarios
+			-Botón para restablecer contraseña 
+
+		En el apartado usuarios vamos a tener en el section:
+			+ Primero mostraremos un listado de los usuarios que tenemos
+
+			-Foto del usuario (not required)
+			-Campo para nombre de usuario
+			-Campo para email de usuario
+			-Campo para nombre de la persona
+			-Campo para apellido de la persona
+			-Campo para día de cumpleaños de la persona
+			-Campo para país de la persona
+
+	- <a href="#">Equipos</a>
+			En el apartado equipos vamos a tener en el aside:
+				-Botón para hacer ping al equipo
+				-Botón para bloquearle el internet a un equipo
+
+			En el apartado equipos vamos a tener en el section:
+				-Display de todos los equipos que hay conectados
+

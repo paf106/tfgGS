@@ -1,0 +1,136 @@
+/*  PARTES MAIN*/
+body{
+	font-family: Segoe UI;
+	background-color: #353232;
+	margin:0;
+	padding: 0;
+}
+header{
+
+}
+aside{
+
+}
+section{
+
+}
+footer{
+	position:fixed;
+	display: flex;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	background-color: #4777ff;
+	height: 5%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+/* FIN DE PARTES MAIN */
+
+
+
+
+
+/* PAGINA DE LOGIN */
+#contenedorLog-in{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-size: cover;
+	background-attachment: fixed;
+	text-align: center;
+	background-image: url(img/wallpaperLog-in.jpg);
+}
+#contenedorLog-in #log-in input{
+	margin-top: 10px;
+}
+/* IMAGENES LOG-IN */
+#contenedorLog-in #log-in img{
+	width: 40px;
+	height: auto;
+	vertical-align: middle;
+	margin-right: 3%;
+}
+#contenedorLog-in #log-in{
+	background-color: #21ccbc;
+	padding: 70px;
+	border-radius: 40px;
+	box-shadow: 9px 9px 11px 2px #000000;
+}
+/* FIN DE PAGINA DE LOGIN */
+
+
+
+
+
+/* PAGINA DE REGISTRO */
+#contenedorRegistro{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	position: absolute;
+	text-align: center;
+	background-image: url(img/wallpaperRegistro.jpg);
+}
+#contenedorRegistro #contenedorApartados{
+	background-color: #c3c9dc;
+	width: 18%;
+	padding: 70px;
+	border-radius: 40px;
+	box-shadow: 9px 9px 11px 2px #000000;
+}
+#contenedorRegistro #contenedorApartados #user{
+	margin-bottom: 3%;
+}
+/* IMAGENES DE TODO EL FORMULARIO */
+#contenedorRegistro #contenedorApartados img{
+	width: 30px;
+	height: auto;
+	vertical-align: middle;
+	margin-right: 3%;
+	
+}
+#contenedorRegistro #contenedorApartados #personalData{
+	margin-bottom: 3%
+}
+/* FIN DE PAGINA DE REGISTRO */
+
+
+
+
+
+/* OTROS */
+input:focus{
+	border-color: blue;
+	transition: all .5s ease;
+}
+h1{
+	text-decoration: underline;
+	display: inline;
+}
+.tiny{
+	font-size: 15px;
+}
+#createAccount, #resetButton, #log-inTemp, #log-inButton{
+	cursor: pointer;
+}
+#contenedorRegistro #contenedorApartados #user fieldset:hover{
+	border-color: #831f43;
+	transition:  .5s ease;
+}
+#contenedorRegistro #contenedorApartados #personalData fieldset:hover{
+	border-color: #831f43;
+	transition:  .5s ease;
+}
+#progressBar{
+	margin-bottom: 3%;
+}
+/* FIN DE OTROS */
