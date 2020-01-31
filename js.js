@@ -38,14 +38,19 @@ function goToAdminPage(){
 function checkPassword(){
 	var pass = document.getElementById('passwordSign-up').value;
 	var repeatPass = document.getElementById('repeatPasswordSign-up').value;
-	if (pass != repeatPass){
+	if (pass != repeatPass){		
 		alert('Passwords are not the same');
-
-		document.getElementById('password').value = "";
-		document.getElementById('repeatPassword').value = "";
-		return true;
-	}else{
+		document.getElementById('passwordSign-up').value = "";
+		document.getElementById('repeatPasswordSign-up').value = "";
+		document.getElementById('passwordSign-up').style.borderColor = "red";
+		document.getElementById('repeatPasswordSign-up').style.borderColor = "red";
 		return false;
+	}else{
+		//document.getElementById('passwordSign-up').style.borderStyle = "solid";
+		//document.getElementById('repeatPasswordSign-up').style.borderStyle = "solid";
+		document.getElementById('passwordSign-up').style.borderColor = "lightgrey";
+		document.getElementById('repeatPasswordSign-up').style.borderColor = "lightgrey";
+		return true;
 	}
 }
 
