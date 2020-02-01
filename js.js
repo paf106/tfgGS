@@ -44,10 +44,9 @@ function strengthCapitalPassword() {
 	for (var i = 0; i < letters.length; i++){
 		if (!pass.includes(letters[i])){
 			//alert('Your password must have at least one capital letter');
-			
-			
+			return false;
 		}else{
-			alert('Your password has one capital letter');
+			//alert('Your password has one capital letter');
 			tieneMayus = true;
 			break;
 		}
@@ -66,10 +65,9 @@ function strengthNumberPassword(){
 	for (var i = 0; i < numbers.length; i++){
 		if (!pass.includes(numbers[i])){
 			//alert('Your password must have at least one number');
-			
-			
+			return false;
 		}else{
-			alert('Your password has one number');
+			//alert('Your password has one number');
 			tieneNumero = true;
 			break;
 		}
@@ -84,10 +82,20 @@ function strengthLengthPassword(){
 	var pass = document.getElementById('passwordSign-up').value;
 	if (pass.length<8){
 		alert('Your password must contain at least 8 characters');
+		return false;
 	}else{
-		alert('Your password contains 8 characters');
+		//alert('Your password contains 8 characters');
 		return true;
 
+	}
+}
+function checkUser(){
+	var user = document.getElementById('userSign-up').value;
+	if (user.length<5 || user.length>15){
+		alert('Your username MUST contain AT LEAST 5 characters and CANNOT have MORE than 15 caracters');
+		return false;
+	}else if(user.length>=5){
+		return true;
 	}
 }
 function checkPassword(){
@@ -175,7 +183,7 @@ function progressBarSurname(){
 
 
 function checkToSubmit(){
-	if (checkPassword()){
-		alert('Survey completed correctly :)');
+	if (checkPassword() && checkUser()){
+		alert('Survey completed correctly');
 	}
 }
