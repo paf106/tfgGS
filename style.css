@@ -61,8 +61,47 @@ footer{
 	border-radius: 40px;
 	box-shadow: 9px 9px 11px 2px #000000;
 }
+#contenedorLog-in #log-in #buttonsLog-in{
+	margin-bottom: 3%;
+}
 /* FIN DE PAGINA DE LOGIN */
 
+
+
+
+/* PAGINA DE RENOVAR CONTRASEÑA */
+#contenedorRenew-password{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-size: cover;
+	background-attachment: fixed;
+	text-align: center;
+	background-image: url(img/wallpaperLog-in.jpg);
+}
+#contenedorRenew-password #renew-password input{
+	margin-top: 10px;
+}
+/* IMAGENES LOG-IN */
+/*#contenedorRenew-password #renew-password img{
+	width: 40px;
+	height: auto;
+	vertical-align: middle;
+	margin-right: 3%;
+}*/
+#contenedorRenew-password #renew-password{
+	background-color: #21ccbc;
+	padding: 70px;
+	border-radius: 40px;
+	box-shadow: 9px 9px 11px 2px #000000;
+}
+#contenedorRenew-password #renew-password #buttonsRenew-password{
+	margin-bottom: 3%;
+}
+/* FIN DE PAGINA DE RENOVAR CONTRASEÑA */
 
 
 
@@ -117,9 +156,9 @@ h1{
 	display: inline;
 }
 .tiny{
-	font-size: 15px;
+	font-size: 14px;
 }
-#createAccount, #resetButton, #log-inTemp, #log-inButton{
+#createAccount, #resetButton, #log-inTemp, #log-inButton, #renewPassword{
 	cursor: pointer;
 }
 #contenedorRegistro #contenedorApartados #user fieldset:hover{
