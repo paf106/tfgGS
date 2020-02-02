@@ -44,17 +44,17 @@ function strengthCapitalPassword() {
 	for (var i = 0; i < letters.length; i++){
 		if (!pass.includes(letters[i])){
 			//alert('Your password must have at least one capital letter');
-			return false;
 		}else{
 			//alert('Your password has one capital letter');
 			tieneMayus = true;
-			break;
+			//break;
 		}
 	}
     if(tieneMayus == true){
     return true;
     }else{
     alert('Your password must have at least one capital letter');
+    return false;
     }
 }
 function strengthNumberPassword(){
@@ -65,17 +65,17 @@ function strengthNumberPassword(){
 	for (var i = 0; i < numbers.length; i++){
 		if (!pass.includes(numbers[i])){
 			//alert('Your password must have at least one number');
-			return false;
 		}else{
 			//alert('Your password has one number');
 			tieneNumero = true;
-			break;
+			//break;
 		}
 	}
     if(tieneNumero == true){
     return true;
     }else{
     alert('Your password must have at least one number');
+    return false;
     }
 }
 function strengthLengthPassword(){
