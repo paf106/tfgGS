@@ -39,14 +39,16 @@ function strengthCapitalPassword() {
 	var pass = document.getElementById('passwordSign-up').value;
 	var tieneMayus = false;
 
-	 var letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
+	var letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 					"P","Q","R","S","T","U","V","W","X","Y","Z"];
 	for (var i = 0; i < letters.length; i++){
 		if (!pass.includes(letters[i])){
 			//alert('Your password must have at least one capital letter');
+			//return false;
 		}else{
 			//alert('Your password has one capital letter');
 			tieneMayus = true;
+			return true;
 			//break;
 		}
 	}
@@ -62,12 +64,15 @@ function strengthNumberPassword(){
 	var tieneNumero = false;
 
 	var numbers = [1,2,3,4,5,6,7,8,9,0];
+
 	for (var i = 0; i < numbers.length; i++){
 		if (!pass.includes(numbers[i])){
 			//alert('Your password must have at least one number');
+			//return false;
 		}else{
 			//alert('Your password has one number');
 			tieneNumero = true;
+			return true;
 			//break;
 		}
 	}
@@ -86,11 +91,12 @@ function strengthLengthPassword(){
 	}else{
 		//alert('Your password contains 8 characters');
 		return true;
-
 	}
+	//alert("strengthLengthPassword()" + strengthLengthPassword());
 }
 function checkUser(){
 	var user = document.getElementById('userSign-up').value;
+	
 	if (user.length<5 || user.length>15){
 		alert('Your username MUST contain AT LEAST 5 characters and CANNOT have MORE than 15 caracters');
 		return false;
@@ -115,6 +121,24 @@ function checkPassword(){
 		strengthLengthPassword();
 
 	}
+	if (pass.length == 0 || repeatPass.length == 0) {
+  	alert("Password fields cannot be blank");
+  	return false;
+	}
+
+		var espacios = false;
+		var cont = 0;
+
+		while (!espacios && (cont < pass.length)) {
+		  if (pass.charAt(cont) == " ")
+		    espacios = true;
+		  cont++;
+		}
+		   
+		if (espacios) {
+		  alert ("Password cannot contain blank spaces");
+		  return false;
+		}
 }
 
 function progressBarUser(){
@@ -183,7 +207,15 @@ function progressBarSurname(){
 
 
 function checkToSubmit(){
-	if (checkPassword() && checkUser()){
-		alert('Survey completed correctly');
+	/*if (!checkUser()){
+		alert('User not valid');
+	}
+	if (!checkPassword()){
+		alert('Password not valid');
+	}*/
+	if (checkUser() && checkPassword()){
+		alert('Datos correctos');
+	}else{
+		alert('Datos incorrectos');
 	}
 }
