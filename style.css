@@ -83,7 +83,7 @@ footer{
 	background-image: url(img/wallpaperLog-in.jpg);
 }
 #contenedorRenew-password #renew-password input{
-	margin-top: 10px;
+	margin-top: 3%;
 }
 /* IMAGENES LOG-IN */
 /*#contenedorRenew-password #renew-password img{
@@ -99,7 +99,7 @@ footer{
 	box-shadow: 9px 9px 11px 2px #000000;
 }
 #contenedorRenew-password #renew-password #buttonsRenew-password{
-	margin-bottom: 3%;
+	
 }
 /* FIN DE PAGINA DE RENOVAR CONTRASEÑA */
 
