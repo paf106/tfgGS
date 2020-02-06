@@ -38,35 +38,38 @@ function goToAdminPage(){
 function strengthCapitalPassword() {
 	var pass = document.getElementById('passwordSign-up').value;
 
-	var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O',
-					'P','Q','R','S','T','U','V','W','X','Y','Z'];
-	for (var i = 0; i < letters.length; i++){
-		if (pass.includes(letters[i])){
+	var letters = "QWERTYUIOPASDFGHJKZXCVBNM";
+	var tieneLetra = false;
+	for (var i = 0; i < pass.length; i++){
+		/*if (pass.includes(letters[i])){
 			//alert('Good password');
-			return true;
-		}else{
-        alert('Your password must have at least one capital letter');
-			return false;
+			tieneLetra = true;
+			break;
+		}*/
+		if (letters.indexOf(pass.charAt(i),0)>=0){
+			//alert('Good password');
+			tieneLetra = true;
+			break;
 		}
-	}
+	}if(tieneLetra == true){
+    return true;
+    }else{
+    alert('Your password must have at least one capital letter');
+    return false;
+    }
 }
 function strengthNumberPassword(){
 	var pass = document.getElementById('passwordSign-up').value;
 	var tieneNumero = false;
 
-	var numbers = [1,2,3,4,5,6,7,8,9,0];
+	var numbers = "1234567890";
 
 	for (var i = 0; i < numbers.length; i++){
-		if (!pass.includes(numbers[i])){
-			//alert('Your password must have at least one number');
-			//return false;
-		}else{
-			//alert('Your password has one number');
+		if (numbers.indexOf(pass.charAt(i),0)>=0){
+			//alert('Good password');
 			tieneNumero = true;
-			//return true;
-			//break;
+			break;
 		}
-	}
     if(tieneNumero == true){
     return true;
     }else{
