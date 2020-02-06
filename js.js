@@ -35,52 +35,46 @@ function goToAdminPage(){
 
 
 // JAVASCRIPT REGISTRO
-function strengthCapitalPassword() {
+function strengthCapitalPassword() {// FUNCIONA BIEN
 	var pass = document.getElementById('passwordSign-up').value;
 
-	var letters = "QWERTYUIOPASDFGHJKZXCVBNM";
+	var letters = "QWERTYUIOPASDFGHJKLZXCVBNM";
 	var tieneLetra = false;
 	for (var i = 0; i < pass.length; i++){
-		/*if (pass.includes(letters[i])){
-			//alert('Good password');
-			tieneLetra = true;
-			break;
-		}*/
 		if (letters.indexOf(pass.charAt(i),0)>=0){
-			//alert('Good password');
+			//alert('Your password contain capital letters');
 			tieneLetra = true;
 			break;
 		}
 	}if(tieneLetra == true){
     return true;
     }else{
-    alert('Your password must have at least one capital letter');
+    alert('Your password MUST contain at least one capital letter');
     return false;
     }
 }
-function strengthNumberPassword(){
+function strengthNumberPassword(){ //FUNCIONA BIEN
 	var pass = document.getElementById('passwordSign-up').value;
-	var tieneNumero = false;
-
+	
 	var numbers = "1234567890";
-
-	for (var i = 0; i < numbers.length; i++){
-		if (numbers.indexOf(pass.charAt(i),0)>=0){
-			//alert('Good password');
+  	var tieneNumero = false;
+  for(var i = 0; i < pass.length;i++){
+    if (numbers.indexOf(pass.charAt(i),0)>=0){
+			//alert('tu pass tiene un numero');
 			tieneNumero = true;
 			break;
 		}
-    if(tieneNumero == true){
+  }if(tieneNumero == true){
     return true;
     }else{
-    alert('Your password must have at least one number');
+    alert('Your password MUST contain at least one number');
     return false;
     }
 }
 function strengthLengthPassword(){ //FUNCIONA BIEN
 	var pass = document.getElementById('passwordSign-up').value;
 	if (pass.length<8){
-		alert('Your password must contain at least 8 characters');
+		alert('Your password MUST contain at least 8 characters');
 		return false;
 	}else{
 		//alert('Your password contains 8 characters');
@@ -97,6 +91,36 @@ function checkUser(){ //FUNCIONA BIEN
 		return true;
 	}
 }
+function checkPasswordSpaces(){
+	var pass = document.getElementById('passwordSign-up').value;
+	var tieneBlank = false;
+
+	//MIRA SI EL CAMPO DE CONTRASEÑA TIENE ALGUN ESPACIO EN BLANCO
+	for (var i = 0; i < pass.length; i++) {
+		if (pass.charAt(i) == " "){
+			//alert('Password does not contain any blank spaces');
+			tieneBlank = true;
+			break;
+		}
+	}if (tieneBlank==true) {
+		alert('Password field cannot contain blank spaces');
+		return false;
+	}else{
+		return true;
+	}	
+}
+function checkPasswordBlank(){
+	var pass = document.getElementById('passwordSign-up').value;
+	var repeatPass = document.getElementById('repeatPasswordSign-up').value;
+	var tieneBlank = false;
+	//MIRA SI EL CAMPO DE CONTRASEÑA Y REPITE CONTRASEÑA ESTÁ VACIO
+	if (pass.length == 0 || repeatPass.length == 0) {
+  	alert("Password fields cannot be blank");
+  	return false;
+	}else{
+		return true;
+	}
+}
 function checkPassword(){
 	var pass = document.getElementById('passwordSign-up').value;
 	var repeatPass = document.getElementById('repeatPasswordSign-up').value;
@@ -107,31 +131,15 @@ function checkPassword(){
 		document.getElementById('passwordSign-up').value = "";
 		document.getElementById('repeatPasswordSign-up').value = "";
 		document.getElementById('passwordSign-up').focus();
-		return false;
+		
 	}else{
+		checkPasswordSpaces();
+		checkPasswordBlank();
 		strengthNumberPassword();
 		strengthCapitalPassword();
 		strengthLengthPassword();
 
 	}
-	if (pass.length == 0 || repeatPass.length == 0) {
-  	alert("Password fields cannot be blank");
-  	return false;
-	}
-
-		var espacios = false;
-		var cont = 0;
-
-		while (!espacios && (cont < pass.length)) {
-		  if (pass.charAt(cont) == " ")
-		    espacios = true;
-		  cont++;
-		}
-		   
-		if (espacios) {
-		  alert ("Password cannot contain blank spaces");
-		  return false;
-		}
 }
 // FIN JAVASCRIPT REGISTRO
 
@@ -139,15 +147,24 @@ function checkPassword(){
 
 
 function checkToSubmit(){
-	/*if (!checkUser()){
-		alert('User not valid');
-	}
-	if (!checkPassword()){
-		alert('Password not valid');
-	}*/
-	if (checkUser() && checkPassword()){
-		alert('Datos correctos');
+	console.log('checkUser(): '+ checkUser());
+	console.log('checkPasswordBlank(): '+ checkPasswordBlank());
+	console.log('checkPasswordSpaces(): '+ checkPasswordSpaces());
+	console.log('strengthNumberPassword(): '+ strengthNumberPassword());
+	console.log('strengthCapitalPassword(): '+ strengthCapitalPassword());
+	console.log('strengthLengthPassword(): '+ strengthLengthPassword());
+
+	if (checkUser() && checkPasswordBlank() && checkPasswordSpaces() && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()){
+		alert('Account created!');
 	}else{
-		alert('Datos incorrectos');
+		alert('Incorrect data');
+		document.getElementById('userSign-up').value = "";
+		document.getElementById('passwordSign-up').value = "";
+		document.getElementById('repeatPasswordSign-up').value = "";
+		document.getElementById('mailSign-up').value = "";
+		document.getElementById('nameSign-up').value = "";
+		document.getElementById('surnameSign-up').value = "";
+		document.getElementById('birthSign-up').value = null;
+		document.getElementById('countrySign-up').value = null;
 	}
 }
