@@ -40,17 +40,17 @@ nav ul li a:hover{
 }
 /* FIN MENU DE NAVEGACION */
 
-
+/*ESTILOS DE "users.html"*/
 aside{
 	width: 10%;
 	float: left;
 	background-color: #3c3c3c;
 	height:89%;
 }
-aside #contenedorBotones{
+aside #contenedorBotonesUser{
 	padding: 19%;
 }
-aside #contenedorBotones span{
+aside #contenedorBotonesUser span{
 	color: #e0e0e0;
 }
 aside div{
@@ -82,9 +82,16 @@ footer{
 	align-items: center;
 	text-align: center;
 }
-.black{
-	color: black;
+/*FIN DE ESTILOS DE "users.html"*/
+
+
+
+
+/*ESTILOS DE "pcs.html"*/
+aside #contenedorBotonesPcs{
+	padding: 19%;
 }
-.darkblue{
-	color: darkblue;
+aside #contenedorBotonesPcs span{
+	color: #e0e0e0;
 }
+/*FIN DE ESTILOS DE "pcs.html"*/
