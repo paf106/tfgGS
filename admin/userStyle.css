@@ -109,40 +109,43 @@ section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
 #nameUser,#surnameUser,#mailUser{
 	padding-left: 12%;
 }
-#contenedorUser #nameUser,#surnameUser,#mailUser,#editUserB,#delUserB,#editUserButton{
+#contenedorUser #nameUser,#surnameUser,#mailUser,#delUserB,#editUserB{
 	display: inline-block;
 }
 /* BOTONES DE EDITAR USUARIO Y ELIMINAR */
 
 /* DIV DE BOTONES */
 #buttonsEditDel{
-	display: inline-block;
 	float: right;
-
 }
 /* BOTON EDITAR USUARIO */
+button{
+	border-radius: 8px;
+}
 #editUserButton{
 	background-color: #deac07;
-	width: 40px;
-	height: 39px;
+	width: 36px;
+	height: 33px;
+	cursor: pointer;
 
 }
 #editUserButton img{
-	width: 25px;
-	vertical-align: center;
-	cursor: pointer;
+	width: 20px;
+	vertical-align: middle;
+	
 	
 }
 /* BOTON ELIMINAR USUARIO */
 #delUserButton{
 	background-color: #800303;
-	width: 40px;
-	height: 39px;
+	width: 36px;
+	height: 33px;
+	cursor: pointer;
 }
 #delUserButton img{
-	vertical-align: center;
-	width: 24px;
-	cursor: pointer;
+	width: 20px;
+	vertical-align: middle;
+
 }
 /* FIN DE BOTONES DE EDITAR USUARIO Y ELIMINAR */
 
