@@ -35,5 +35,5 @@ En admin-html:
 			En el apartado equipos vamos a tener en el section:
 				-Display de todos los equipos que hay conectados
 
-- Para renovar la contraseña puede generar una aleatoria y cuando inicie sesion obligar a que la cambie.
-- Revisar el javascript que valida las contraseñas en el registro, hay algo que está mal.
+
+- boton de herramientas que permita: crear usuario, y cambiar la foto de perfil
