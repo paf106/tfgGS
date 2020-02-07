@@ -47,7 +47,7 @@ nav ul li a:hover{
 
 /* ESTILOS DE LA LEYENDA */
 section #contenedorPricipalUser #contenedorSectionLeyenda{
-	background-color: #bdedfb;
+	background-color: #b1edff;
 	margin: 1%;
 	border-radius: 10px;
 }
@@ -78,7 +78,7 @@ section #contenedorPricipalUser #contenedorSectionUser{
 	border-radius: 10px;
 }
 section #contenedorPricipalUser #contenedorSectionUser:hover{
-	background-color: #cef7f7;
+	background-color: #cff;
 }
 section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
 	/*background-color: #000;*/
