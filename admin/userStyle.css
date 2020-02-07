@@ -70,8 +70,12 @@ section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
 	display: inline-block;
 }
 /* BOTONES DE EDITAR USUARIO Y ELIMINAR */
+#nameUser,#surnameUser,#mailUser{
+	padding-left: 8%;
+}
 #buttonsEditDel{
 	display: inline-block;
+	float: right;
 }
 #editUserButton{
 	background-color: #deac07;
