@@ -37,6 +37,7 @@ nav ul li a{
 nav ul li a:hover{
 	background-color: #89c9ef;
 	transition:  .5s ease;
+	color: black;
 }
 /* FIN MENU DE NAVEGACION */
 
@@ -53,6 +54,40 @@ aside #contenedorBotonesUser{
 aside #contenedorBotonesUser span{
 	color: #e0e0e0;
 }
+section #contenedorPricipalUser #contenedorSectionUser{
+	background-color: #dbdbdb;
+	margin: 1%;
+	height: 89%;
+	padding: 1%;
+	border-radius: 10px;
+}
+section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
+	/*background-color: #000;*/
+	padding: 3px;
+}
+/* CONFIGURACION DE LOS APARTADOS DE USUARIO QUE SE COGERAN DE LA BASE DE DATOS */
+ #userUser{
+	display: inline-block;
+}
+/* BOTONES DE EDITAR USUARIO Y ELIMINAR */
+#buttonsEditDel{
+	display: inline-block;
+}
+#editUserButton{
+	background-color: #deac07;
+	width: 30px;
+	height: 30px;
+}
+#delUserButton{
+	background-color: #d10606;
+	width: 30px;
+	height: 30px;
+}
+/* FIN DE BOTONES DE EDITAR USUARIO Y ELIMINAR */
+#contenedorUser #nameUser,#surnameUser,#mailUser,#editUserB,#delUserB{
+	display: inline-block;
+}
+/* FIN DE CONFIGURACION DE LOS APARTADOS DE USUARIO QUE SE COGERAN DE LA BASE DE DATOS */
 aside div{
 	text-align: center;
 }
