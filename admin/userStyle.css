@@ -75,11 +75,11 @@ section #contenedorPricipalUser #contenedorSectionLeyenda #contenedorLeyenda{
 	margin-bottom: 2%;
 }
 /* ESTILOS DE LOS NOMBRES DE LAS LEYENDAS */
- #userLeyenda{
+#photoLeyenda{
 	display: inline-block;
 	padding-left: 1%;
 }
-#nameLeyenda,#surnameLeyenda,#mailLeyenda{
+#nameLeyenda,#surnameLeyenda,#mailLeyenda,#userLeyenda{
 	padding-left: 12%;
 	display: inline-block;
 }
@@ -91,7 +91,6 @@ section #contenedorPricipalUser #contenedorSectionLeyenda #contenedorLeyenda{
 section #contenedorPricipalUser #contenedorSectionUser{
 	background-color: #f3f3f3;
 	margin: 1%;
-	height: 89%;
 	padding: 1%;
 	border-radius: 10px;
 }
@@ -99,12 +98,25 @@ section #contenedorPricipalUser #contenedorSectionUser:hover{
 	background-color: #cff;
 }
 section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
-	/*background-color: #000;*/
-	padding: 3px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+
+}
+/* IMAGENES DE LOS USARIOS */
+#photoUser img{
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+}
+#photoUser{
+	display: inline-block;
+	height: 60px;
 }
 /* CONFIGURACION DE LOS APARTADOS DE USUARIO QUE SE COGERAN DE LA BASE DE DATOS */
  #userUser{
 	display: inline-block;
+	padding-left: 12%;
 }
 #nameUser,#surnameUser,#mailUser{
 	padding-left: 12%;
@@ -116,7 +128,7 @@ section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
 
 /* DIV DE BOTONES */
 #buttonsEditDel{
-	float: right;
+	
 }
 /* BOTON EDITAR USUARIO */
 button{
@@ -124,13 +136,13 @@ button{
 }
 #editUserButton{
 	background-color: #deac07;
-	width: 36px;
-	height: 33px;
+	width: 45px;
+	height: 45px;
 	cursor: pointer;
 
 }
 #editUserButton img{
-	width: 20px;
+	width: 29px;
 	vertical-align: middle;
 	
 	
@@ -138,12 +150,12 @@ button{
 /* BOTON ELIMINAR USUARIO */
 #delUserButton{
 	background-color: #800303;
-	width: 36px;
-	height: 33px;
+	width: 45px;
+	height: 45px;
 	cursor: pointer;
 }
 #delUserButton img{
-	width: 20px;
+	width: 29px;
 	vertical-align: middle;
 
 }
