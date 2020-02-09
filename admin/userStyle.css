@@ -6,6 +6,7 @@ html,body{
 	height:100%;
 }
 header{
+	
 }
 section{
 	float: right;
@@ -31,8 +32,7 @@ footer{
 /* MENU DE NAVEGACION */
 nav{
 	background-color:#a0a0a0;
-	height: 10%;
-	
+	height: 6%;
 }
 .signOut{
 	float: right;
@@ -50,11 +50,12 @@ nav ul li a{
 	color: white;
 	text-decoration: none;
 	padding: 19px;
-	display: block
+	display: inline-block;
+	transition: 0.5s ease;
+
 }
 nav ul li a:hover{
 	background-color: #89c9ef;
-	transition:  .5s ease;
 	color: black;
 }
 /* FIN MENU DE NAVEGACION */
@@ -67,20 +68,23 @@ nav ul li a:hover{
 section #contenedorPricipalUser #contenedorSectionLeyenda{
 	background-color: #b1edff;
 	margin: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
 	border-radius: 10px;
+	margin-bottom: 2%;
 }
 section #contenedorPricipalUser #contenedorSectionLeyenda #contenedorLeyenda{
 	/*background-color: #000;*/
 	padding: 3px;
-	margin-bottom: 2%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 /* ESTILOS DE LOS NOMBRES DE LAS LEYENDAS */
-#photoLeyenda{
-	display: inline-block;
-	padding-left: 1%;
+#mailLeyenda{
+
 }
-#nameLeyenda,#surnameLeyenda,#mailLeyenda,#userLeyenda{
-	padding-left: 12%;
+#nameLeyenda,#surnameLeyenda,#mailLeyenda,#userLeyenda,#photoLeyenda{
 	display: inline-block;
 }
 /* FIN DE ESTILOS DE LA LEYENDA */
@@ -93,14 +97,15 @@ section #contenedorPricipalUser #contenedorSectionUser{
 	margin: 1%;
 	padding: 1%;
 	border-radius: 10px;
+	transition: 0.5s ease;
 }
 section #contenedorPricipalUser #contenedorSectionUser:hover{
 	background-color: #cff;
 }
 section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
-	height: 60px;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 
 }
 /* IMAGENES DE LOS USARIOS */
@@ -115,13 +120,11 @@ section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
 }
 /* CONFIGURACION DE LOS APARTADOS DE USUARIO QUE SE COGERAN DE LA BASE DE DATOS */
  #userUser{
-	display: inline-block;
-	padding-left: 12%;
 }
 #nameUser,#surnameUser,#mailUser{
-	padding-left: 12%;
+	
 }
-#contenedorUser #nameUser,#surnameUser,#mailUser,#delUserB,#editUserB{
+#contenedorUser #nameUser,#surnameUser,#mailUser,#delUserB,#editUserB,#userUser{
 	display: inline-block;
 }
 /* BOTONES DE EDITAR USUARIO Y ELIMINAR */

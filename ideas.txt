@@ -36,4 +36,4 @@ En admin-html:
 				-Display de todos los equipos que hay conectados
 
 
-- boton de herramientas que permita: crear usuario, y cambiar la foto de perfil, cambiar la contraseña
+ - JUNTAR CON FLEXBOX LA 'LEYENDA' Y 'EL APARTADO DE USUARIOS'
