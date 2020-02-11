@@ -171,11 +171,22 @@ function checkToSubmit(){
 
 /* JAVASCRIPT ADMINISTRACION USUARIO */
 function delUserConfirmation(){
-	/*document.getElementById("fullPage").style.filter = "blur(2px)";*/
-	/*document.getElementById("contenedorConfirmacionDelUser").style.display = "block";*/
+	/* Pone header, section y footer en fondo blur */
+	/*document.querySelector("header").style.filter = "blur(2px)";
+	document.querySelector("section").style.filter = "blur(2px)";
+	document.querySelector("footer").style.filter = "blur(2px)";*/
+
+	document.getElementById("contenedorConfirmacionDelUser").style.display = "flex";
 	document.getElementById("contenedorAlertDelUser").style.display = "block";
-	
 }
 function closeAlertDelUser(){
+	/* Quita header, section y footer del fondo blur */
+	/*
+	document.querySelector("header").style.filter = "blur(0px)";
+	document.querySelector("section").style.filter = "blur(0px)";
+	document.querySelector("footer").style.filter = "blur(0px)";*/
+
+	document.getElementById("contenedorConfirmacionDelUser").style.display = "none";
 	document.getElementById("contenedorAlertDelUser").style.display = "none";
 }
+/* FIN JAVASCRIPT ADMINISTRACION USUARIO */
