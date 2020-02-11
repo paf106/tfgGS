@@ -162,10 +162,14 @@ button{
 	width: 45px;
 	height: 45px;
 	cursor: pointer;
-	transition: 0.5s ease;
+	
 }
 #editUserButton:hover{
 	background-color: #ffb900;
+
+}
+#editUserButton:active{
+	background-color: #fde6ab;
 }
 #editUserButton img{
 	width: 29px;
@@ -180,10 +184,13 @@ button{
 	width: 45px;
 	height: 45px;
 	cursor: pointer;
-	transition: 0.5s ease;
+	
 }
 #delUserButton:hover{
 	background-color: #d92c0d;
+}
+#delUserButton:active{
+	background-color: #ffb7aa;
 }
 #delUserButton img{
 	width: 29px;
