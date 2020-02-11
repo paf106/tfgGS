@@ -168,3 +168,14 @@ function checkToSubmit(){
 		document.getElementById('countrySign-up').value = null;
 	}
 }
+
+/* JAVASCRIPT ADMINISTRACION USUARIO */
+function delUserConfirmation(){
+	/*document.getElementById("fullPage").style.filter = "blur(2px)";*/
+	/*document.getElementById("contenedorConfirmacionDelUser").style.display = "block";*/
+	document.getElementById("contenedorAlertDelUser").style.display = "block";
+	
+}
+function closeAlertDelUser(){
+	document.getElementById("contenedorAlertDelUser").style.display = "none";
+}
