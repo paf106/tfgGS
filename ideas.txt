@@ -37,3 +37,44 @@ En admin-html:
 
 
  - JUNTAR CON FLEXBOX LA 'LEYENDA' Y 'EL APARTADO DE USUARIOS'
+
+ botones nuevos: (COPIAR Y PEGAR CON CUIDADO)
+/* BOTON EDITAR USUARIO */
+button{
+	border-radius: 8px;
+}
+#editUserButton{
+	background-color: #fde6ab;
+	border: 2px solid #ffb900;
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+#editUserButton:hover{
+	background-color: #ffb900;
+}
+#editUserButton img{
+	width: 29px;
+	vertical-align: middle;
+	
+	
+}
+/* BOTON ELIMINAR USUARIO */
+#delUserButton{
+	background-color: #ffb7aa;
+	border: 2px solid #d92c0d;
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+#delUserButton:hover{
+	background-color: #d92c0d;
+}
+#delUserButton img{
+	width: 29px;
+	vertical-align: middle;
+
+}
+/* FIN DE BOTONES DE EDITAR USUARIO Y ELIMINAR */
