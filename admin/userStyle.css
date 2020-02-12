@@ -6,8 +6,6 @@ body,html{
 	padding: 0;
 }
 header{
-	/*background-color:#a0a0a0;
-	height: 9%;*/
 	/*height: 10%;*/
 	width: 100%;
 
@@ -201,9 +199,86 @@ button{
 
 /* FIN DE CONFIGURACION DE LOS APARTADOS DE USUARIO QUE SE COGERAN DE LA BASE DE DATOS */
 
+/* ALERTA EDITAR USUARIO */
+
+/* FOTO USUARIO */
+#photoEditUserUser{
+	align-items: flex-start;
+	justify-content: center;
+	margin-bottom: 1em;
+}
+#photoEditUserUser img{
+	border-radius: 50%;
+	width: 7em;
+	height: 7em;
+}
+/* FIN FOTO USUARIO */
+#contenedorEditUser{
+	background-color: #fff;
+	padding: 3em;
+	border-radius: 40px;
+	box-shadow: 1px 1px 11px 2px #000000;
+	position: absolute;
+	display: none;
+	
+}
+label{
+	width: 5em;
+	display: inline-block;
+	padding-top: 0.5em; 
+}
+#contenedorEditUser span{
+	font-weight: bold;
+}
+#contenedorEditUser input{
+	color: black;
+	border: 3px solid #d4d4d4;
+	border-radius: 8px;
+	width: 24em;
+	height: 1.75em;
+	transition: 0.5s ease;
+}
+#contenedorEditUser input:hover{
+	width: 27em;
+	height: 2.1em;
+}
+#buttonsAlertEditUser{
+	margin-top: 2em;
+}
+#alertEditUserYes{
+	background-color: #fff;
+	color: black;
+	border: 2px solid #09ed28;
+	width: 100px;
+	height: 45px;
+	cursor: pointer;
+	transition: 0.5s ease;
+	
+}
+#alertEditUserYes:hover{
+	background-color: #09ed28;
+	color: white;
+}
+#alertEditUserNo{
+	background-color: #fff;
+	color: black;
+	border: 2px solid #d92c0d;
+	width: 100px;
+	height: 45px;
+	cursor: pointer;
+	transition: 0.5s ease;
+	
+}
+#alertEditUserNo:hover{
+	background-color: #d92c0d;
+	color: white;
+}
+
+/* FIN DE ALERTA EDITAR USUARIO */
 /* ALERTA BORRAR USUARIO */
 
-#contenedorConfirmacionDelUser{
+#contenedorConfirmacion{
+	/*display: flex;*/ /*ACTIVAR ESTE ESTILO CUANDO SE VAYA A EDITAR(EL JAVASCRIPT LO PONE EN DISPLAY:FLEX)*/
 	align-items: center;
 	justify-content: center;
 	text-align: center;
@@ -213,17 +288,18 @@ button{
 	display: none;
 
 }
-#contenedorAlertDelUser{
+#contenedorDelUser{
 	background-color: #fff;
 	padding: 65px;
 	border-radius: 40px;
-	box-shadow: 2px 2px 11px 2px #000000;
+	box-shadow: 1px 1px 11px 2px #000000;
 	position: absolute;
 	display: none;
 	
 }
-#contenedorAlertDelUser p{
+#contenedorDelUser p{
 	font-size: 20px;
+
 }
 #alertDelUserYes{
 	background-color: #fff;

@@ -8,8 +8,21 @@
 	<script src="../js.js"></script>
 </head>
 <body>
-	<div id="contenedorConfirmacionDelUser">
-		<div id="contenedorAlertDelUser">
+	<div id="contenedorConfirmacion">
+		<div id="contenedorEditUser">
+			<div id="photoEditUserUser"><img src="../img/photoUsers/defaultPhoto.png" alt="photoUser"></div>
+			<span><label for="user">User</label></span><input type="text" name="EditUserUser" value="paf106"><br>
+			<span><label for="name">Name</label></span><input type="text" name="EditUserUser" value="Pablo"><br>
+			<span><label for="surname">Surname</label></span><input type="text" name="EditUserUser" value="Avila Fernandez"><br>
+			<span><label for="email">Email</label></span><input type="mail" name="EditUserUser" value="pabloavila106@gmail.com">
+			<div id="buttonsAlertEditUser">
+				<button type="button" id="alertEditUserYes" name="AlertEditUser" value="Edit"><b>Edit</b></button>
+				<button type="button" id="alertEditUserNo" name="AlterEditUser" value="Cancel" onclick="cancelAlertEditUser()"><b>Cancel</b></button>
+			</div>
+		</div>
+
+
+		<div id="contenedorDelUser">
 			<p><b>Are you sure?</b></p><br>
 			<div id="buttonsAlertDelUser">
 				<button type="button" id="alertDelUserYes" name="AlertDelUser" value="Yes"><b>Yes</b></button>
@@ -64,7 +77,7 @@
 						<div id="mailUser">lauravila106@gmail.com</div>
 					<div id="buttonsEditDel">
 						<div id="editUserB">
-							<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image"></button>
+							<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image" onclick="editUserConfirmation()"></button>
 						</div>
 						<div id="delUserB">
 							<button type="button" name="" id="delUserButton" value=""><img src="../img/delUser.png" alt="delUser_Image" onclick="delUserConfirmation()"></button>
@@ -82,7 +95,7 @@
 						<div id="mailUser">lauravila106@gmail.com</div>
 					<div id="buttonsEditDel">
 						<div id="editUserB">
-							<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image"></button>
+							<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image" onclick="editUserConfirmation()"></button>
 						</div>
 						<div id="delUserB">
 							<button type="button" name="" id="delUserButton" value=""><img src="../img/delUser.png" alt="delUser_Image" onclick="delUserConfirmation()"></button>
