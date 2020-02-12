@@ -73,6 +73,7 @@ nav ul li ul{
 }
 nav ul li:hover ul{
 	display: block;
+	position: absolute;
 }
 nav ul li ul li{
 	float: none;
