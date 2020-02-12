@@ -8,7 +8,7 @@ body,html{
 header{
 	/*background-color:#a0a0a0;
 	height: 9%;*/
-	height: 10%;
+	/*height: 10%;*/
 	width: 100%;
 
 }
@@ -73,7 +73,6 @@ nav ul li ul{
 }
 nav ul li:hover ul{
 	display: block;
-	position: absolute;
 }
 nav ul li ul li{
 	float: none;
