@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+	session_start();
+?>
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Users</title>
+	<title>Hi <?php echo $_SESSION['username']; ?></title>
 	<link rel="stylesheet" href="userStyle.css">
 	<script src="../js.js"></script>
 </head>

@@ -1,39 +1,3 @@
-// JAVASCRIPT LOGIN
-function goToAdminPage(){
-	//Datos correctos
-	var usuarioCorrecto = 'pablo';
-	var contrasenaCorrecta = '1234';
-
-	var user = document.getElementById('userLog-in').value;
-	var password = document.getElementById('passwordLog-in').value;
-	
-	//Comprobamos el usuario y la contraseña y si son correctos le mandamos a la admin page.
-	//Si son incorrectos le decimos que no son correctas las credenciales
-	if (user == usuarioCorrecto && password == contrasenaCorrecta){
-		alert('User and Password correct');
-		location.href='admin/user.html';
-		// Comprobamos si los campos de usuario y contraseña están en blanco
-	}else if(user == "" && password == ""){
-		alert('Blank fields');
-		//Comprobamos si el campo usuario está en blanco
-	}else if (user == ""){
-		alert('User field blank');
-		//Comprobamos si el campo contraseña está en blanco
-	}else if (password == ""){
-		alert('Password field blank');
-	}else{
-		alert('User or password incorrect');
-		document.getElementById('userLog-in').value = "";
-		document.getElementById('passwordLog-in').value = "";
-	}
-
-	
-}
-// FIN JAVASCRIPT LOGIN
-
-
-
-
 // JAVASCRIPT REGISTRO
 function strengthCapitalPassword() {// FUNCIONA BIEN
 	var pass = document.getElementById('passwordSign-up').value;
