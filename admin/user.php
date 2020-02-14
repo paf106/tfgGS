@@ -2,6 +2,10 @@
 <html lang="en">
 <?php 
 	session_start();
+	//Si no está la sesion iniciada no te deja ir a 'user.php'
+	if (!isset($_SESSION['username'])) {
+		header('location:../index.html');
+	}
 ?>
 <html>
 <head>
@@ -50,7 +54,7 @@
 							<li><a href="#">Change photo</a></li>
 						</ul>
 					</li>
-					<li id="signOut"><a href="#">Sign out</a></li>
+					<li id="signOut"><a href="logout.php">Sign out</a></li>
 					
 				</ul>
 			</nav>
