@@ -165,13 +165,19 @@ h1{
 #createAccount, #resetButton, #log-inTemp, #log-inButton, #renewPassword{
 	cursor: pointer;
 }
+#contenedorRegistro #contenedorApartados #user fieldset{
+	
+	transition:  .5s ease;
+}
 #contenedorRegistro #contenedorApartados #user fieldset:hover{
 	border-color: #831f43;
+}
+
+#contenedorRegistro #contenedorApartados #personalData fieldset{
 	transition:  .5s ease;
 }
 #contenedorRegistro #contenedorApartados #personalData fieldset:hover{
 	border-color: #831f43;
-	transition:  .5s ease;
 }
 #progressBar{
 	margin-bottom: 3%;
