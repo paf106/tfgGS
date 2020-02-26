@@ -3,42 +3,27 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Registrate</title>
-	<link rel="stylesheet" href="style.css">
+	<title>Sign-Up</title>
+	<link rel="stylesheet" href="sign-upStyle.css">
 	<script src="js.js"></script>
 </head>
 <body>
-	<header>
-		
-	</header>
-
-	<aside>
-	</aside>
-
 	<section>
 		<div id="contenedorRegistro">
 			<div id="contenedorApartados">
-				<form action="registration.php" method="post" autocomplete="off">
-					<div id="user">
-						<fieldset>
-							<legend>User</legend>
-
+				<form action="registration.php" method="post" accept-charset="utf-8" autocomplete="off">
+							<h1>Complete the fields</h1>
+						<div id="user">
 							<img src="img/user.svg" alt="user_image"><input type="text" name="user" id="userSign-up" value="" placeholder="User" onchange="checkUser()" required><br>
-							<img src="img/password.svg" alt="password_image"><input type="text" name="password" id="passwordSign-up" value="" placeholder="Password" required onchange="progressBarPassword()"><br>
-							<img src="img/password.svg" alt="password_image"><input type="text" name="repeatPassword" id="repeatPasswordSign-up" value="" placeholder="Repeat password" required onchange="checkPassword()"><br>
+							<img src="img/password.svg" alt="password_image"><input type="password" name="password" id="passwordSign-up" value="" placeholder="Password" required><br>
+							<img src="img/password.svg" alt="password_image"><input type="password" name="repeatPassword" id="repeatPasswordSign-up" value="" placeholder="Repeat password" required onchange="checkPassword()"><br>
 							<img src="img/mail.svg" alt="mail_image"><input type="email" name="mail" id="mailSign-up" value="" placeholder="Mail" required onchange="progressBarMail()"><br>
-
-						</fieldset>
-					</div>
-
-					<div id="personalData">
-						<fieldset>
-							<legend>Personal data</legend>
-							
-							<img src="img/nameSurname.png" alt="birthday_image"><input type="text" name="name" id="nameSign-up" value="" placeholder="Name" required onchange="progressBarName()"><br>
-							<img src="img/nameSurname.png" alt="birthday_image"><input type="text" name="surname" id="surnameSign-up" value="" placeholder="Surname" required onchange="progressBarSurname()"><br>
-							<img src="img/birthday.svg" alt="birthday_image"><input type="date" name="birthdate" id="birthSign-up" value="" style="width:168px;" required><br>
-							<img src="img/country.svg" alt="country_image"><select name="country" id="countrySign-up" style="width:173px;">
+						</div>
+						<div id="personalData">
+							<img src="img/nameSurname.png" alt="birthday_image"><input type="text" name="name" id="nameSign-up" value="" placeholder="Name" required><br>
+							<img src="img/nameSurname.png" alt="birthday_image"><input type="text" name="surname" id="surnameSign-up" value="" placeholder="Surname" required><br>
+							<img src="img/birthday.svg" alt="birthday_image"><input type="date" name="birthdate" id="birthSign-up" value="" style="width:20em" required><br>
+							<img src="img/country.svg" alt="country_image"><select name="country" id="countrySign-up" style="width:20em">
 								<option value="Spain">Spain</option>
 								<option value="France">France</option>
 								<option value="Germany">Germany</option>
@@ -50,20 +35,17 @@
 								<option value="Italy">Italy</option>
 								<option value="Sweden">Sweden</option>
 								</select>
-						</fieldset>
+						</div>
+						<div id="createAccountButton">
+						<button type="submit" name="createAccount" value="Create Account" id="createAccount" onclick="checkToSubmit()"><b>Create Account</b></button>
+						<button type="reset" name="reset" value="Reset" id="resetButton"><b>Reset</b></button>
 					</div>
-					<div id="progressBar">
-						<progress id="bar" value="0" min="0" max="7"></progress>
-					</div>
-					<div id="createAccountButton">
-						<input type="submit" name="createAccount" value="Create Account" id="createAccount" onclick="checkToSubmit()">
-						<input type="reset" name="reset" value="Reset" id="resetButton">
-					</div>
-
 				</form>
 			</div>
 		</div>
 	</section>
-	<footer>Made by Pablo Avila Fernandez</footer>
+	<footer>
+		Made by Pablo Ávila Fernández
+	</footer>
 </body>
 </html>
