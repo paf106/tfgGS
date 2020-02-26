@@ -1,0 +1,92 @@
+body,html{
+	font-family: Calibri;
+	/*background-color: #000;*/
+	margin:0;
+	padding: 0;
+	height: 100%;
+}
+
+section{
+	height: 95%;
+}
+footer{
+	height: 5%;
+	background-color: #4777ff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#contenedorRegistro{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-image: url(img/wallpaperRegistro.jpg);
+}
+#contenedorApartados{
+	background-color: #c3c9dc;
+	/*width: 50%;
+	height: 50%;*/
+	border-radius: 20px;
+	padding: 3em;
+	box-shadow: 5px 5px 11px 2px #000000;
+}
+#contenedorApartados img{
+	width: 40px;
+	/*padding-right: 3%;*/
+	vertical-align: middle;
+}
+#contenedorApartados h1{
+	display: inline-block;
+	padding-bottom: 0.5em;
+	margin: 0;
+}
+#contenedorApartados input,select{
+	border-radius: 0.5em;
+	height: 2em;
+	margin-bottom: 0.5em;
+	width: 20em;
+	/*border: 2px solid black;*/
+	border: 2px solid grey;
+}
+#personalData{
+	margin-top: 1em;
+}
+#createAccountButton{
+	margin-top: 1em;
+}
+button{
+	border-radius: 8px;
+}
+#resetButton{
+	background-color: #fff;
+	color: black;
+	border: 2px solid #ddb415;
+	width: 100px;
+	height: 45px;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+#resetButton:hover{
+	background-color: #ddb415;
+	color: white;
+}
+#createAccount{
+	background-color: #fff;
+	color: black;
+	border: 2px solid #15ddca;
+	width: 152px;
+	height: 45px;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+#createAccount:hover{
+	background-color: #15ddca;
+	color: white;
+}
