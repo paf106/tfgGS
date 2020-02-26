@@ -108,48 +108,6 @@ footer{
 /* FIN DE PAGINA DE RENOVAR CONTRASEÑA */
 
 
-
-
-/* PAGINA DE REGISTRO */
-#contenedorRegistro{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-attachment: fixed;
-	position: absolute;
-	text-align: center;
-	background-image: url(img/wallpaperRegistro.jpg);
-}
-#contenedorRegistro #contenedorApartados{
-	background-color: #c3c9dc;
-	width: 21%;
-	padding: 50px;
-	border-radius: 40px;
-	box-shadow: 9px 9px 11px 2px #000000;
-}
-#contenedorRegistro #contenedorApartados #user{
-	margin-bottom: 3%;
-}
-/* IMAGENES DE TODO EL FORMULARIO */
-#contenedorRegistro #contenedorApartados img{
-	width: 30px;
-	height: auto;
-	vertical-align: middle;
-	margin-right: 3%;
-	
-}
-#contenedorRegistro #contenedorApartados #personalData{
-	margin-bottom: 3%
-}
-/* FIN DE PAGINA DE REGISTRO */
-
-
-
-
-
 /* OTROS */
 input:focus{
 	border-color: blue;
