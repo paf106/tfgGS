@@ -49,10 +49,12 @@ function checkUser(){ //FUNCIONA BIEN
 	var user = document.getElementById('userSign-up').value;
 	
 	if (user.length<5 || user.length>15){
-		alert('Your username MUST contain AT LEAST 5 characters and CANNOT have MORE than 15 caracters');
+		//alert('Your username MUST contain AT LEAST 5 characters and CANNOT have MORE than 15 caracters');
 		return false;
 	}else if(user.length>=5){
 		return true;
+	}else if(user.value == ""){
+		return false;
 	}
 }
 function checkPasswordSpaces(){
@@ -103,6 +105,17 @@ function checkPassword(){
 		strengthCapitalPassword();
 		strengthLengthPassword();
 
+	}
+}
+
+function resaltarUserField(){
+	var user = document.getElementById('userSign-up').value;
+	if (checkUser()) {
+		document.getElementById("userSign-up").style.border = "2px solid green";
+		document.getElementById("userSign-up").style.backgroundColor = "#8cff8a";
+	}else if (!checkUser()){
+		document.getElementById("userSign-up").style.border = "2px solid #f00";
+		document.getElementById("userSign-up").style.backgroundColor = "#ff8a8a";
 	}
 }
 // FIN JAVASCRIPT REGISTRO
