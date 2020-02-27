@@ -112,10 +112,10 @@ function resaltarUserField(){
 	var user = document.getElementById('userSign-up').value;
 	if (checkUser()) {
 		document.getElementById("userSign-up").style.border = "2px solid green";
-		document.getElementById("userSign-up").style.backgroundColor = "#8cff8a";
+		document.getElementById("userSign-up").style.backgroundColor = "#c7ffce";
 	}else if (!checkUser()){
 		document.getElementById("userSign-up").style.border = "2px solid #f00";
-		document.getElementById("userSign-up").style.backgroundColor = "#ff8a8a";
+		document.getElementById("userSign-up").style.backgroundColor = "#ffc7c7";
 	}
 }
 // FIN JAVASCRIPT REGISTRO
