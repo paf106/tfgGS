@@ -37,8 +37,22 @@ footer{
 	padding: 3em;
 	box-shadow: 5px 5px 11px 2px #000000;
 }
+/*Textos que salen cuando la contraseña esta mal*/
+#contenedorApartados span{
+	color: #c70101;
+	font-size: 1em;
+}
+#passLengthText{
+	display: none;
+}
+#passCapitalLetterText{
+	display: none;
+}
+#passNumberText{
+	display: none;
+}
 #contenedorApartados img{
-	width: 40px;
+	width: 35px;
 	/*padding-right: 3%;*/
 	vertical-align: middle;
 }
