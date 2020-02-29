@@ -176,6 +176,20 @@ function resaltarPasswordField(){
 		document.getElementById("repeatPasswordSign-up").style.backgroundColor = "#ffc7c7";
 	}
 }
+function resaltarEmailField() { 
+  var email = document.getElementById("mailSign-up").value;
+  var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email);
+  
+  if (regex) {
+  	//Pone los bordes y el fondo de color verde
+		document.getElementById("mailSign-up").style.border = "2px solid green";
+		document.getElementById("mailSign-up").style.backgroundColor = "#c7ffce";
+  }else{
+  	//Pone los bordes y el fondo de color rojo
+		document.getElementById("mailSign-up").style.border = "2px solid #ea0707";
+		document.getElementById("mailSign-up").style.backgroundColor = "#ffc7c7";
+  }
+}
 
 
 
@@ -191,7 +205,7 @@ function checkToSubmit(){
 	console.log('strengthCapitalPassword(): '+ strengthCapitalPassword());
 	console.log('strengthLengthPassword(): '+ strengthLengthPassword());
 
-	if (checkUser() && checkPasswordBlank() && checkPasswordSpaces() && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()){
+	if (checkPassword() && resaltarEmailField() && checkUser() && checkPasswordBlank() && checkPasswordSpaces() && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()){
 		alert('Account created!');
 	}else{
 		alert('Incorrect data');
@@ -204,12 +218,20 @@ function checkToSubmit(){
 		document.getElementById('birthSign-up').value = null;
 		document.getElementById('countrySign-up').value = null;
 
-		//Pone los bordes y el fondo de color rojo
+		//Pone los bordes y el fondo de color rojo del apartado de la contraseña
 		document.getElementById("passwordSign-up").style.border = "2px solid #ea0707";
 		document.getElementById("passwordSign-up").style.backgroundColor = "#ffc7c7";
 
 		document.getElementById("repeatPasswordSign-up").style.border = "2px solid #ea0707";
 		document.getElementById("repeatPasswordSign-up").style.backgroundColor = "#ffc7c7";
+
+		//Pone en rojo el apartado del usuario
+		document.getElementById("userSign-up").style.border = "2px solid #f00";
+		document.getElementById("userSign-up").style.backgroundColor = "#ffc7c7";
+
+		//Pone los bordes y el fondo de color rojo del email
+		document.getElementById("mailSign-up").style.border = "2px solid #ea0707";
+		document.getElementById("mailSign-up").style.backgroundColor = "#ffc7c7";
 	}
 }
 // FIN JAVASCRIPT REGISTRO
