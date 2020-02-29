@@ -73,21 +73,23 @@ function checkPasswordSpaces(){
 		}
 	}if (tieneBlank==true) {
 		//alert('Password field cannot contain blank spaces');
-		return false;
-	}else{
+		//TIENE ESPACIOS ENTRE MEDIAS
 		return true;
+	}else{
+		
+		return false;
 	}	
 }
 function checkPasswordBlank(){
 	var pass = document.getElementById('passwordSign-up').value;
 	var repeatPass = document.getElementById('repeatPasswordSign-up').value;
-	var tieneBlank = false;
 	//MIRA SI EL CAMPO DE CONTRASEÑA Y REPITE CONTRASEÑA ESTÁ VACIO
 	if (pass.length == 0 || repeatPass.length == 0) {
   	//alert("Password fields cannot be blank");
-  	return false;
+  	return true;
 	}else{
-		return true;
+		
+		return false;
 	}
 }
 function checkPassword(){
@@ -100,10 +102,12 @@ function checkPassword(){
 		document.getElementById('passwordSign-up').value = "";
 		document.getElementById('repeatPasswordSign-up').value = "";
 		document.getElementById('passwordSign-up').focus();
+		return false;
 		
 	}else{
-		checkPasswordSpaces();
-		checkPasswordBlank();
+		/*checkPasswordSpaces();
+		checkPasswordBlank();*/
+		return true;
 	}
 }
 
@@ -118,7 +122,7 @@ function resaltarUserField(){
 }
 function resaltarPasswordField(){
 	checkPassword();
-	if (checkPasswordBlank() && checkPasswordSpaces() && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()) {
+	if (checkPasswordBlank()==false && checkPasswordSpaces()==false && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()) {
 		
 		//Ocultamos los mensajes de que faltan caracteres
 		/*document.getElementById('passLengthText').style.display = "none";
@@ -184,10 +188,12 @@ function resaltarEmailField() {
   	//Pone los bordes y el fondo de color verde
 		document.getElementById("mailSign-up").style.border = "2px solid green";
 		document.getElementById("mailSign-up").style.backgroundColor = "#c7ffce";
+		return true;
   }else{
   	//Pone los bordes y el fondo de color rojo
 		document.getElementById("mailSign-up").style.border = "2px solid #ea0707";
 		document.getElementById("mailSign-up").style.backgroundColor = "#ffc7c7";
+		return false;
   }
 }
 
@@ -198,17 +204,26 @@ function resaltarEmailField() {
 
 
 function checkToSubmit(){
-	console.log('checkUser(): '+ checkUser());
-	console.log('checkPasswordBlank(): '+ checkPasswordBlank());
-	console.log('checkPasswordSpaces(): '+ checkPasswordSpaces());
-	console.log('strengthNumberPassword(): '+ strengthNumberPassword());
-	console.log('strengthCapitalPassword(): '+ strengthCapitalPassword());
-	console.log('strengthLengthPassword(): '+ strengthLengthPassword());
-
-	if (checkPassword() && resaltarEmailField() && checkUser() && checkPasswordBlank() && checkPasswordSpaces() && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()){
+	//console.log('checkUser(): '+ checkUser());
+	//console.log('checkPasswordBlank(): '+ checkPasswordBlank());
+	//console.log('checkPasswordSpaces(): '+ checkPasswordSpaces());
+	//console.log('strengthNumberPassword(): '+ strengthNumberPassword());
+	//console.log('strengthCapitalPassword(): '+ strengthCapitalPassword());
+	//console.log('strengthLengthPassword(): '+ strengthLengthPassword());
+	
+	if (checkPassword() && resaltarEmailField() && checkPasswordBlank()==false && checkPasswordSpaces()==false && checkUser() && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()){
 		alert('Account created!');
 	}else{
 		alert('Incorrect data');
+		console.log('checkUser(): '+ checkUser());
+			console.log('checkPasswordBlank(): '+ checkPasswordBlank());
+			console.log('strengthNumberPassword(): '+ strengthNumberPassword());
+	console.log('strengthCapitalPassword(): '+ strengthCapitalPassword());
+	console.log('strengthLengthPassword(): '+ strengthLengthPassword());
+	console.log('resaltarEmailField(): '+ resaltarEmailField());
+	console.log('checkPassword(): '+ checkPassword());
+
+
 		document.getElementById('userSign-up').value = "";
 		document.getElementById('passwordSign-up').value = "";
 		document.getElementById('repeatPasswordSign-up').value = "";
