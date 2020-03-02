@@ -115,9 +115,13 @@ function resaltarUserField(){
 	if (checkUser()) {
 		document.getElementById("userSign-up").style.border = "2px solid green";
 		document.getElementById("userSign-up").style.backgroundColor = "#c7ffce";
+
+		document.getElementById('checkUserText').style.display = "none";
 	}else if (!checkUser()){
 		document.getElementById("userSign-up").style.border = "2px solid #f00";
 		document.getElementById("userSign-up").style.backgroundColor = "#ffc7c7";
+
+		document.getElementById('checkUserText').style.display = "block";
 	}
 }
 function resaltarPasswordField(){
