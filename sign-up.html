@@ -15,8 +15,10 @@
 							<h1>Complete the fields</h1>
 						<div id="user">
 							<img src="img/user.svg" alt="user_image"><input type="text" name="user" id="userSign-up" value="" placeholder="User" onchange="resaltarUserField()" required><br>
+							<div id="checkUserText"><span>* Username must have at least 5 characters</span><br></div>
+							<div id="checkUserBBDDText"><span>* This user is already taken</span><br></div>
 							<img src="img/password.svg" alt="password_image"><input type="password" name="password" id="passwordSign-up" value="" placeholder="Password" required><br>
-							<img src="img/password.svg" alt="password_image"><input type="password" name="repeatPassword" id="repeatPasswordSign-up" value="" placeholder="Repeat password" required onblur="resaltarPasswordField()"><br>
+							<img src="img/password.svg" alt="password_image"><input type="password" name="repeatPassword" id="repeatPasswordSign-up" value="" placeholder="Repeat password" required onchange="resaltarPasswordField()"><br>
 							<div id="passLengthText"><span>* Password >= 8 charaters</span><br></div>
 							<div id="passCapitalLetterText"><span>* Password at least 1 capital letter</span><br></div>
 							<div id="passNumberText"><span>* Password at least 1 number</span><br></div>
