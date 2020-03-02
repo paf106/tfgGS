@@ -42,6 +42,12 @@ footer{
 	color: #c70101;
 	font-size: 1em;
 }
+#checkUserText{
+	display: none;
+}
+#checkUserBBDDText{
+	display: none;
+}
 #passLengthText{
 	display: none;
 }
