@@ -239,8 +239,10 @@ label{
 	transition: 0.5s ease;
 }
 #contenedorEditUser input:hover{
-	width: 27em;
-	height: 2.1em;
+	width: 29em;
+	height: 2.5em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 #buttonsAlertEditUser{
 	margin-top: 2em;
