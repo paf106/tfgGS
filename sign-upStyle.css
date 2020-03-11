@@ -1,6 +1,6 @@
 body,html{
 	font-family: Calibri;
-	background-color: #000;
+	/*background-color: #000;*/
 	margin:0;
 	padding: 0;
 	height: 100%;
@@ -72,7 +72,6 @@ footer{
 	height: 2em;
 	margin-bottom: 0.5em;
 	width: 20em;
-	/*border: 2px solid black;*/
 	border: 2px solid grey;
 }
 #personalData{
