@@ -12,8 +12,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Hi <?php echo $_SESSION['username']; ?></title>
-	<link rel="stylesheet" href="userStyle.css">
-	<script src="../js.js"></script>
+	<link rel="stylesheet" type="text/css" href="userStyle.css">
+	<script src="jsAdmin.js"></script>
 </head>
 <body>
 	<div id="contenedorConfirmacion">
