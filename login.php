@@ -16,7 +16,7 @@
 	$testUser = "SELECT * FROM users WHERE user = '$userLogin' && password = '$passLogin'";
 	$result = mysqli_query($con, $testUser);
 	$num = mysqli_num_rows($result);
-	//Si existe mostramos el mensaje de que el usuario está, si no, lo metemos en la tabla
+	//Si existe mostramos el mensaje de que el usuario está, si no, tendrá acceso a la consola de administración
 	if($num == 1){
 		//Coge el nombre de usuario que ha iniciado sesion
 		$_SESSION['username'] = $userLogin;
