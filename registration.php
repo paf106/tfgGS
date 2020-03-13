@@ -6,7 +6,7 @@
 	
 	//Conexion a la base de datos
 	$user="pablo";
-	$pass="Pablete107";
+	$pass="Westfalia_106";
 	$server="localhost";
 	$db="tfg";
 	$con=mysqli_connect($server,$user,$pass,$db);
@@ -27,12 +27,12 @@
 	$num = mysqli_num_rows($result);
 	//Si existe mostramos el mensaje de que el usuario está, si no, lo metemos en la tabla
 	if($num == 1){
-		echo "Username taken";
+		echo '<script language="javascript">alert("Username taken");</script>';
 	}else{
 		$reg = "insert into users(user, password, mail, name, surname, birthdate, country) values ('$userRegistration',
 		'$passRegistration', '$mailRegistration', '$nameRegistration', '$surnameRegistration', '$birthRegistration', '$countryRegistration')";
 		mysqli_query($con, $reg);
-		echo "Registration successful";
+		header('location:index.html');
 		}
 ?>
 
