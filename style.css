@@ -1,15 +1,9 @@
 /*  PARTES MAIN*/
-body{
+body,html{
 	font-family: Calibri;
 	background-color: #000;
 	margin:0;
 	padding: 0;
-}
-header{
-
-}
-aside{
-
 }
 section{
 
@@ -68,10 +62,6 @@ footer{
 
 
 
-
-
-
-
 /* OTROS */
 h1{
 	text-decoration: underline;
@@ -80,7 +70,7 @@ h1{
 .tiny{
 	font-size: 14px;
 }
-#createAccount, #resetButton, #log-inTemp, #log-inButton, #renewPassword{
+#createAccount, #log-inButton, #renewPassword{
 	cursor: pointer;
 }
 /* FIN DE OTROS */
