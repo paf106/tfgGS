@@ -3,7 +3,7 @@
 	
 	//Conexion a la base de datos
 	$user="pablo";
-	$pass="Pablete107";
+	$pass="Westfalia_106";
 	$server="localhost";
 	$db="tfg";
 	$con=mysqli_connect($server,$user,$pass,$db);
