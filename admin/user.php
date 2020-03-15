@@ -6,6 +6,20 @@
 	if (!isset($_SESSION['username'])) {
 		header('location:../index.html');
 	}
+
+	//Conexion a la base de datos
+	$user="pablo";
+	$pass="Westfalia_106";
+	$server="localhost";
+	$db="tfg";
+	$con = mysqli_connect($server,$user,$pass,$db);
+
+	if (!$con) {
+		echo 'No se pudo conectar con el server'. mysql_error();
+	}else{
+		$consulta = "SELECT user,mail,name,surname FROM users";
+		$resultado = mysqli_query($con,$consulta);
+	}
 ?>
 <html>
 <head>
@@ -74,49 +88,30 @@
 						<div id="mailLeyenda"><b>BUTTONS</b></div>
 					</div>
 				</div>
+				<!-- Codigo php que muestra todos los usarios de la base de datos-->
+		<?php 					
+						while ($row = mysqli_fetch_array($resultado)) {
 
-				<!-- DATOS QUE SE COGERÁN DE LA BASE DE DATOS-->
-				<div id="contenedorSectionUser">
-					<div id="contenedorUser">
-					<div id="photoUser"><img src="../img/photoUsers/defaultPhoto.png" alt="photoUser"></div>
-						<div id="userUser"><b>paf106</b></div>
-						<div id="nameUser">Laura</div>
-						<div id="surnameUser">Avila Fernandez</div>
-						<div id="mailUser">lauravila106@gmail.com</div>
-					<div id="buttonsEditDel">
-						<div id="editUserB">
-							<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image" onclick="editUserConfirmation()"></button>
-						</div>
-						<div id="delUserB">
-							<button type="button" name="" id="delUserButton" value=""><img src="../img/delUser.png" alt="delUser_Image" onclick="delUserConfirmation()"></button>
-						</div>
-					</div>
-					</div>
-				</div>
-				<!--USUARIO DIFERENTE-->
-				<div id="contenedorSectionUser">
-					<div id="contenedorUser">
-					<div id="photoUser"><img src="../img/photoUsers/user1.png" alt="photoUser"></div>
-						<div id="userUser"><b>GAS106</b></div>
-						<div id="nameUser">Laura</div>
-						<div id="surnameUser">Avila Fernandez</div>
-						<div id="mailUser">lauravila106@gmail.com</div>
-					<div id="buttonsEditDel">
-						<div id="editUserB">
-							<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image" onclick="editUserConfirmation()"></button>
-						</div>
-						<div id="delUserB">
-							<button type="button" name="" id="delUserButton" value=""><img src="../img/delUser.png" alt="delUser_Image" onclick="delUserConfirmation()"></button>
-						</div>
-					</div>
-					</div>
-				</div>
-				<div id="contenedorSectionUser">
-					<div id="user">
-						usuario1
-					</div>
-
-				</div>
+										
+						echo '<div id="contenedorSectionUser">';
+							echo '<div id="contenedorUser">';
+								echo '<div id="photoUser"><img src="../img/photoUsers/defaultPhoto.png" alt="photoUser"></div>';
+								echo '<div id="userUser"><b>';echo $row["user"];echo "</b></div>";
+								echo '<div id="nameUser">';echo $row["name"];echo "</div>";
+								echo '<div id="surnameUser">';echo $row["surname"];echo "</div>";
+								echo '<div id="mailUser">';echo $row["mail"];echo "</div>";
+						echo '<div id="buttonsEditDel">';
+							echo '<div id="editUserB">';
+							echo '<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image" onclick="editUserConfirmation()"></button>';
+						echo "</div>";
+						echo '<div id="delUserB">';
+							echo '<button type="button" name="" id="delUserButton" value=""><img src="../img/delUser.png" alt="delUser_Image" onclick="delUserConfirmation()"></button>';
+						echo "</div>";
+					echo "</div>";
+					echo "</div>";
+						echo "</div>";
+						}
+						?>
 			</div>
 
 		</section>
