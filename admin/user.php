@@ -58,7 +58,7 @@
 				<!--<p><span class="black">PABLO</span><span class="darkblue">IT</span></p>-->
 				<ul>
 					<!-- Nombres que aparecen a simple vista-->
-					<li><a href="user.html">Users</a></li>
+					<li><a href="user.php">Users</a></li>
 					<li><a href="pcs.html">PCs</a></li>
 					<li><a href="#">Algo</a></li>
 					<li><a href="#">Tools</a>
