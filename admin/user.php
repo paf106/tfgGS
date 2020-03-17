@@ -9,11 +9,12 @@
 
 	//Conexion a la base de datos
 	$user="pablo";
-	$pass="Westfalia_106";
+	$pass="Pablete107";
 	$server="localhost";
 	$db="tfg";
 	$con = mysqli_connect($server,$user,$pass,$db);
 
+	//Coge los datos de la base de datos
 	if (!$con) {
 		echo 'No se pudo conectar con el server'. mysql_error();
 	}else{
@@ -21,7 +22,6 @@
 		$resultado = mysqli_query($con,$consulta);
 	}
 ?>
-<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +31,7 @@
 </head>
 <body>
 	<div id="contenedorConfirmacion">
+		<!--CONTENEDOR EDICION DE USUARIO -->
 		<div id="contenedorEditUser">
 			<div id="photoEditUserUser"><img src="../img/photoUsers/defaultPhoto.png" alt="photoUser"></div>
 			<span><label for="user">User</label></span><input type="text" name="EditUserUser" value="paf106"><br>
@@ -39,16 +40,51 @@
 			<span><label for="email">Email</label></span><input type="mail" name="EditUserUser" value="pabloavila106@gmail.com">
 			<div id="buttonsAlertEditUser">
 				<button type="button" id="alertEditUserYes" name="AlertEditUser" value="Edit"><b>Edit</b></button>
-				<button type="button" id="alertEditUserNo" name="AlterEditUser" value="Cancel" onclick="cancelAlertEditUser()"><b>Cancel</b></button>
+				<button type="button" id="alertEditUserNo" name="AlterEditUser" value="Cancel" onclick="closeAlert('contenedorEditUser')"><b>Cancel</b></button>
 			</div>
 		</div>
 
+		<!--SELECCION DE USUARIO PARA CAMBIAR CONTRASEÑA -->
+		<div id="contenedorSelectUser">
+			<p class="titleWindow"><b>Select user: </b></p>
+			<select name="userList">
+			<?php 			
+				//Conexion con la base de datos
+				if (!$con) {
+					echo 'No se pudo conectar con el server'. mysql_error();
+				}else{
+					//Cogemos el campo 'user' de la base de daros
+					$pullUser = "SELECT user FROM users";
+					$resultado2 = mysqli_query($con,$pullUser);
+				}		
+				while ($row = mysqli_fetch_array($resultado2)) {
+						echo '<option value="';echo $row['user'];echo '">'; echo $row['user'];echo '</option>';
+					}
+			?>
+			</select>
+			<div id="buttonsAlertDelUser">
+				<button type="button" id="alertDelUserYes" name="AlertDelUser" value="ok" onclick="openEditPassAlert()"><b>OK</b></button>
+				<button type="button" id="alertDelUserNo" name="AlterDelUser" value="No" onclick="closeAlert('contenedorSelectUser')"><b>Cancel</b></button>
+			</div>
+		</div>
 
+		<!--CONTENEDOR EDICION DE CONTRASEÑA DE USUARIO -->
+		<div id="contenedorEditPass">
+			<input type="password" name="editPassUser" id="editPassPreviousPass" value="" placeholder="Previous password" onblur="checkPass('editPassPreviousPass')"><br>
+			<input type="password" name="editPassUser" id="editPassNewPass" value="" placeholder="New password"><br>
+			<input type="password" name="editPassUser" id="editPassRepeatPass" value="" placeholder="Repeat password">
+			<div id="buttonsAlertDelUser">
+				<button type="button" id="alertDelUserYes" name="AlertDelUser" value="ok"><b>OK</b></button>
+				<button type="button" id="alertDelUserNo" name="AlterDelUser" value="No" onclick="closeAlert('contenedorEditPass')"><b>Cancel</b></button>
+			</div>
+		</div>
+
+		<!--CONTENEDOR ELIMINACION DE USUARIO -->
 		<div id="contenedorDelUser">
-			<p><b>Are you sure?</b></p><br>
+			<p class="titleWindow"><b>Are you sure?</b></p><br>
 			<div id="buttonsAlertDelUser">
 				<button type="button" id="alertDelUserYes" name="AlertDelUser" value="Yes"><b>Yes</b></button>
-				<button type="button" id="alertDelUserNo" name="AlterDelUser" value="No" onclick="closeAlertDelUser()"><b>No</b></button>
+				<button type="button" id="alertDelUserNo" name="AlterDelUser" value="No" onclick="closeAlert('contenedorDelUser')"><b>No</b></button>
 			</div>
 		</div>
 	</div>
@@ -64,7 +100,7 @@
 					<li><a href="#">Tools</a>
 						<ul>
 							<li><a href="#">Create user</a></li>
-							<li><a href="#">Change password</a></li>
+							<li><a href="#" onclick="openAlert('contenedorSelectUser')">Change password</a></li>
 							<li><a href="#">Change photo</a></li>
 						</ul>
 					</li>
@@ -102,10 +138,10 @@
 								echo '<div id="mailUser">';echo $row["mail"];echo "</div>";
 						echo '<div id="buttonsEditDel">';
 							echo '<div id="editUserB">';
-							echo '<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image" onclick="editUserConfirmation()"></button>';
+							echo '<button type="button" name="" id="editUserButton" value=""><img src="../img/editUser.png" alt="editUser_Image" onclick="openAlert(\'contenedorEditUser\')"></button>';
 						echo "</div>";
 						echo '<div id="delUserB">';
-							echo '<button type="button" name="" id="delUserButton" value=""><img src="../img/delUser.png" alt="delUser_Image" onclick="delUserConfirmation()"></button>';
+							echo '<button type="button" name="" id="delUserButton" value=""><img src="../img/delUser.png" alt="delUser_Image" onclick="openAlert(\'contenedorDelUser\')"></button>';
 						echo "</div>";
 					echo "</div>";
 					echo "</div>";
