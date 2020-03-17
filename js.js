@@ -1,233 +1,226 @@
-// JAVASCRIPT REGISTRO
-function strengthCapitalPassword() {// FUNCIONA BIEN
-	var pass = document.getElementById('passwordSign-up').value;
-
-	var letters = "QWERTYUIOPASDFGHJKLZXCVBNM";
-	var tieneLetra = false;
-	for (var i = 0; i < pass.length; i++){
-		if (letters.indexOf(pass.charAt(i),0)>=0){
-			//alert('Your password contain capital letters');
-			tieneLetra = true;
-			break;
-		}
-	}if(tieneLetra == true){
-    return true;
-    }else{
-    //alert('Your password MUST contain at least one capital letter');
-    return false;
-    }
+function mostrarDiv(div){
+	document.getElementById(div).style.display = "block";
 }
-function strengthNumberPassword(){ //FUNCIONA BIEN
-	var pass = document.getElementById('passwordSign-up').value;
-	
-	var numbers = "1234567890";
-  	var tieneNumero = false;
-  for(var i = 0; i < pass.length;i++){
-    if (numbers.indexOf(pass.charAt(i),0)>=0){
-			//alert('tu pass tiene un numero');
-			tieneNumero = true;
-			break;
-		}
-  }if(tieneNumero == true){
-    return true;
-    }else{
-    //alert('Your password MUST contain at least one number');
-    return false;
-    }
+function cerrarDiv(div){
+	document.getElementById(div).style.display = "none";
 }
-function strengthLengthPassword(){ //FUNCIONA BIEN
-	var pass = document.getElementById('passwordSign-up').value;
-	var repeatPass = document.getElementById('repeatPasswordSign-up').value;
-	if (pass.length<8 || repeatPass.length<8){
-		
-		//alert('Your password MUST contain at least 8 characters');
-		return false;
-	}else{
-		//alert('Your password contains 8 characters');
-		
-		return true;
-	}
+function greenHighlight(input){
+	//Pone los bordes y el fondo de color verde
+		document.getElementById(input).style.border = "2px solid green";
+		document.getElementById(input).style.backgroundColor = "#c7ffce";
+
+		document.getElementById(input).style.border = "2px solid green";
+		document.getElementById(input).style.backgroundColor = "#c7ffce";
 }
-function checkUser(){ //FUNCIONA BIEN
-	var user = document.getElementById('userSign-up').value;
-	
-	if (user.length<5 || user.length>15){
-		//alert('Your username MUST contain AT LEAST 5 characters and CANNOT have MORE than 15 caracters');
-		return false;
-	}else if(user.length>=5){
-		return true;
-	}else if(user.value == ""){
-		return false;
-	}
+function redHighlight(input){
+	//Pone los bordes y el fondo de color rojo
+		document.getElementById(input).style.border = "2px solid #ea0707";
+		document.getElementById(input).style.backgroundColor = "#ffc7c7";
+
+		document.getElementById(input).style.border = "2px solid #ea0707";
+		document.getElementById(input).style.backgroundColor = "#ffc7c7";
 }
-function checkPasswordSpaces(){
-	var pass = document.getElementById('passwordSign-up').value;
-	var tieneBlank = false;
-
-	//MIRA SI EL CAMPO DE CONTRASEÑA TIENE ALGUN ESPACIO EN BLANCO
-	for (var i = 0; i < pass.length; i++) {
-		if (pass.charAt(i) == " "){
-			//alert('Password does not contain any blank spaces');
-			tieneBlank = true;
-			break;
-		}
-	}if (tieneBlank==true) {
-		//alert('Password field cannot contain blank spaces');
-		//TIENE ESPACIOS ENTRE MEDIAS
-		return true;
-	}else{
-		
-		return false;
-	}	
-}
-function checkPasswordBlank(){
-	var pass = document.getElementById('passwordSign-up').value;
-	var repeatPass = document.getElementById('repeatPasswordSign-up').value;
-	//MIRA SI EL CAMPO DE CONTRASEÑA Y REPITE CONTRASEÑA ESTÁ VACIO
-	if (pass.length == 0 || repeatPass.length == 0) {
-  	//alert("Password fields cannot be blank");
-  	return true;
-	}else{
-		
-		return false;
-	}
-}
-function checkPassword(){
-	var pass = document.getElementById('passwordSign-up').value;
-	var repeatPass = document.getElementById('repeatPasswordSign-up').value;
-
-
-	if (pass != repeatPass){		
-		alert('Passwords are not the same');
-		document.getElementById('passwordSign-up').value = "";
-		document.getElementById('repeatPasswordSign-up').value = "";
-		document.getElementById('passwordSign-up').focus();
-		return false;
-		
-	}else{
-		/*checkPasswordSpaces();
-		checkPasswordBlank();*/
-		return true;
-	}
-}
-
-function resaltarUserField(){
-	if (checkUser()) {
-		document.getElementById("userSign-up").style.border = "2px solid green";
-		document.getElementById("userSign-up").style.backgroundColor = "#c7ffce";
-
-		document.getElementById('checkUserText').style.display = "none";
-	}else if (!checkUser()){
-		document.getElementById("userSign-up").style.border = "2px solid #f00";
-		document.getElementById("userSign-up").style.backgroundColor = "#ffc7c7";
-
-		document.getElementById('checkUserText').style.display = "block";
-	}
-}
-function resaltarPasswordField(){
-	checkPassword();
-	if (checkPasswordBlank()==false && checkPasswordSpaces()==false && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()) {
-		
-		//Ocultamos los mensajes de que faltan caracteres
-		/*document.getElementById('passLengthText').style.display = "none";
-		document.getElementById('passCapitalLetterText').style.display = "none";
-		document.getElementById('passNumberText').style.display = "none";*/
-		
-		//Pone los bordes y el fondo de color verde
-		document.getElementById("passwordSign-up").style.border = "2px solid green";
-		document.getElementById("passwordSign-up").style.backgroundColor = "#c7ffce";
-
-		document.getElementById("repeatPasswordSign-up").style.border = "2px solid green";
-		document.getElementById("repeatPasswordSign-up").style.backgroundColor = "#c7ffce";
-	}
-	
-	//Comprobamos la longitud de la contraseña
-	if (strengthLengthPassword()) {
-		document.getElementById('passLengthText').style.display = "none";
-	}else{
-		document.getElementById('passLengthText').style.display = "block";
-
-		//Pone los bordes y el fondo de color rojo
-		document.getElementById("passwordSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("passwordSign-up").style.backgroundColor = "#ffc7c7";
-
-		document.getElementById("repeatPasswordSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("repeatPasswordSign-up").style.backgroundColor = "#ffc7c7";
-	}
-
-
-	//Comprobamos que la contraseña tiene un numero
-	if (strengthNumberPassword()) {
-		document.getElementById('passNumberText').style.display = "none";
-	}else{
-		document.getElementById('passNumberText').style.display = "block";
-
-		//Pone los bordes y el fondo de color rojo
-		document.getElementById("passwordSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("passwordSign-up").style.backgroundColor = "#ffc7c7";
-
-		document.getElementById("repeatPasswordSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("repeatPasswordSign-up").style.backgroundColor = "#ffc7c7";
-	}
-
-	//Comprobamos que la contraseña tiene una letra mayuscula 
-	if (strengthCapitalPassword()) {
-		document.getElementById('passCapitalLetterText').style.display = "none";
-	}else{
-		document.getElementById('passCapitalLetterText').style.display = "block";
-
-		//Pone los bordes y el fondo de color rojo
-		document.getElementById("passwordSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("passwordSign-up").style.backgroundColor = "#ffc7c7";
-
-		document.getElementById("repeatPasswordSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("repeatPasswordSign-up").style.backgroundColor = "#ffc7c7";
-	}
-}
-function resaltarEmailField() { 
-  var email = document.getElementById("mailSign-up").value;
+function resaltarEmailField(emailPasado) { 
+  var email = document.getElementById(emailPasado).value;
   var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email);
   
   if (regex) {
   	//Pone los bordes y el fondo de color verde
-		document.getElementById("mailSign-up").style.border = "2px solid green";
-		document.getElementById("mailSign-up").style.backgroundColor = "#c7ffce";
+  		greenHighlight('mailSign-up');
 		return true;
   }else{
   	//Pone los bordes y el fondo de color rojo
-		document.getElementById("mailSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("mailSign-up").style.backgroundColor = "#ffc7c7";
+  		redHighlight('mailSign-up');
 		return false;
   }
 }
-
-
-
-
-
-
-
-function checkToSubmit(){
-	//console.log('checkUser(): '+ checkUser());
-	//console.log('checkPasswordBlank(): '+ checkPasswordBlank());
-	//console.log('checkPasswordSpaces(): '+ checkPasswordSpaces());
-	//console.log('strengthNumberPassword(): '+ strengthNumberPassword());
-	//console.log('strengthCapitalPassword(): '+ strengthCapitalPassword());
-	//console.log('strengthLengthPassword(): '+ strengthLengthPassword());
+function checkUser(usuario){ //FUNCIONA BIEN
+	var user = document.getElementById(usuario).value;
 	
-	if (checkPassword() && resaltarEmailField() && checkPasswordBlank()==false && checkPasswordSpaces()==false && checkUser() && strengthNumberPassword() && strengthCapitalPassword() && strengthLengthPassword()){
+	if (user.length<5 || user.length>15){
+		//alert('Your username MUST contain AT LEAST 5 characters and CANNOT have MORE than 15 caracters');
+		redHighlight('userSign-up');
+		mostrarDiv('checkUserText');
+		return false;
+	}else if(user.length>=5){
+		greenHighlight('userSign-up');
+		cerrarDiv('checkUserText');
+		return true;
+	}else if(user.value == ""){
+		redHighlight('userSign-up');
+		mostrarDiv('checkUserText');
+		return false;
+	}
+}
+function checkPassword(pass, repeatPass){
+	//Variables we are gonna use
+	var password = document.getElementById(pass).value;
+	var repeatPassword = document.getElementById(repeatPass).value;
+
+	//Variables related to password verification
+	var samePassword = false;
+	var emptyPassword = false;
+	var blankSpaces = false;
+	var correctLength = false;
+	var containCapitalLetter = false;
+	var containNumbers = false;
+
+	
+	//###First we are gonna compare if the passwords are the same
+	if (password != repeatPassword){		
+		samePassword = false;
+		alert('Passwords are not the same');
+		document.getElementById(pass).value = "";
+		document.getElementById(repeatPass).value = "";
+	}else{
+		samePassword = true;
+	}
+
+	//###Secondly we are gonna check if the pasword fields are empty
+	if (password.length == 0 || repeatPassword.length == 0) {
+		emptyPassword = true;
+	}else{
+		emptyPassword = false;
+	}
+
+	//###Thirdly we are gonna check if the password fields have blank spaces
+	var tieneBlankPass = false;
+	var tieneBlankRepeatPass = false;
+
+	for (var i = 0; i < password.length; i++) {
+		if (password.charAt(i) == " "){
+			tieneBlankPass = true;
+			break;
+		}
+	}
+	for (var i = 0; i < repeatPassword.length; i++) {
+		if (repeatPassword.charAt(i) == " "){
+			tieneBlankRepeatPass = true;
+			break;
+		}
+	}if (tieneBlankPass || tieneBlankRepeatPass) {
+		blankSpaces = true;
+	}else{
+		blankSpaces = false;
+	}
+
+	if (password.length<8 || repeatPassword.length<8){
+		correctLength = false;
+	}else{
+		correctLength = true;
+	}
+
+	//### We are gonna check if the password fields have capital letter 
+	var letters = "QWERTYUIOPASDFGHJKLZXCVBNM";
+	var tieneLetraPass = false;
+	var tieneLetraRepeatPass = false;
+	
+	for (var i = 0; i < password.length; i++){
+		if (letters.indexOf(password.charAt(i),0)>=0){
+			//alert('Your password contain capital letters');
+			tieneLetraPass = true;
+			break;
+		}else{
+			tieneLetraPass = false;
+		}
+	}
+	for (var i = 0; i < repeatPassword.length; i++){
+		if (letters.indexOf(repeatPassword.charAt(i),0)>=0){
+			//alert('Your password contain capital letters');
+			tieneLetraRepeatPass = true;
+			break;
+		}else{
+			tieneLetraRepeatPass = false;
+		}
+	}
+	if(tieneLetraPass && tieneLetraRepeatPass){
+    containCapitalLetter = true;
+    }else{
+    //alert('Your password MUST contain at least one capital letter');
+    containCapitalLetter = false;
+    }
+
+    //### We are gonna check if the password fields have a number
+    var numbers = "1234567890";
+  	var tieneNumeroPass = false;
+  	var tieneNumeroRepeatPass = false;
+  		for(var i = 0; i < password.length;i++){
+    		if (numbers.indexOf(password.charAt(i),0)>=0){
+				//alert('tu pass tiene un numero');
+				tieneNumeroPass = true;
+				break;
+			}else{
+				tieneNumeroPass = false;
+			}
+  		}
+  		for(var i = 0; i < repeatPassword.length;i++){
+    		if (numbers.indexOf(repeatPassword.charAt(i),0)>=0){
+				//alert('tu pass tiene un numero');
+				tieneNumeroRepeatPass = true;
+				break;
+			}else{
+				tieneNumeroRepeatPass = false;
+			}
+  		}
+
+  if(tieneNumeroPass && tieneNumeroRepeatPass){
+  	containNumbers = true;
+    }else{
+    	containNumbers = false;
+    }
+
+	//### Highlight parts
+
+	//We highlight the blankSpacesText
+	if (blankSpaces) {
+		mostrarDiv('blankSpacesText');
+	}else{
+		cerrarDiv('blankSpacesText');
+	}
+
+	//We highlight the emptyFieldText
+	if (emptyPassword) {
+		mostrarDiv('emptyFieldText');
+	}else{
+		cerrarDiv('emptyFieldText');
+	}
+
+	//We highlight the passLengthText
+	if (!correctLength) {
+		mostrarDiv('passLengthText');
+	}else{
+		cerrarDiv('passLengthText');
+	}
+
+	//We highlight the passCapitalLetterText
+	if (!containCapitalLetter) {
+		mostrarDiv('passCapitalLetterText');
+	}else{
+		cerrarDiv('passCapitalLetterText');
+	}
+
+	//We highlight the passNumberText
+	if (!containNumbers) {
+		mostrarDiv('passNumberText');
+	}else{
+		cerrarDiv('passNumberText');
+	}
+
+	if (samePassword && containNumbers && containCapitalLetter && correctLength && !blankSpaces && !emptyPassword) {
+		greenHighlight('passwordSign-up');
+		greenHighlight('repeatPasswordSign-up');
+		return true;
+	}else{
+		redHighlight('passwordSign-up');
+		redHighlight('repeatPasswordSign-up');
+		return false;
+	}
+}
+function checkToSubmit(){
+	if (checkPassword('passwordSign-up', 'repeatPasswordSign-up') && checkUser('userSign-up') && resaltarEmailField('mailSign-up')){
 		alert('Account created!');
 	}else{
 		alert('Incorrect data');
-		console.log('checkUser(): '+ checkUser());
-			console.log('checkPasswordBlank(): '+ checkPasswordBlank());
-			console.log('strengthNumberPassword(): '+ strengthNumberPassword());
-	console.log('strengthCapitalPassword(): '+ strengthCapitalPassword());
-	console.log('strengthLengthPassword(): '+ strengthLengthPassword());
-	console.log('resaltarEmailField(): '+ resaltarEmailField());
-	console.log('checkPassword(): '+ checkPassword());
-
-
 		document.getElementById('userSign-up').value = "";
 		document.getElementById('passwordSign-up').value = "";
 		document.getElementById('repeatPasswordSign-up').value = "";
@@ -238,70 +231,13 @@ function checkToSubmit(){
 		document.getElementById('countrySign-up').value = null;
 
 		//Pone los bordes y el fondo de color rojo del apartado de la contraseña
-		document.getElementById("passwordSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("passwordSign-up").style.backgroundColor = "#ffc7c7";
-
-		document.getElementById("repeatPasswordSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("repeatPasswordSign-up").style.backgroundColor = "#ffc7c7";
+		redHighlight('passwordSign-up');
+		redHighlight('repeatPasswordSign-up');
 
 		//Pone en rojo el apartado del usuario
-		document.getElementById("userSign-up").style.border = "2px solid #f00";
-		document.getElementById("userSign-up").style.backgroundColor = "#ffc7c7";
+		redHighlight('userSign-up');
 
 		//Pone los bordes y el fondo de color rojo del email
-		document.getElementById("mailSign-up").style.border = "2px solid #ea0707";
-		document.getElementById("mailSign-up").style.backgroundColor = "#ffc7c7";
+		redHighlight('mailSign-up');
 	}
 }
-// FIN JAVASCRIPT REGISTRO
-
-/* JAVASCRIPT ADMINISTRACION USUARIO */
-function delUserConfirmation(){
-	/* Pone header, section y footer en fondo blur */
-	document.getElementById("contenedorConfirmacion").style.display = "flex";
-	document.getElementById("contenedorConfirmacion").style.zIndex = "1";
-	document.getElementById("contenedorDelUser").style.zIndex = "1";
-	document.getElementById("contenedorDelUser").style.display = "block";
-
-	document.querySelector("header").style.filter = "blur(2px)";
-	document.querySelector("section").style.filter = "blur(2px)";
-	document.querySelector("footer").style.filter = "blur(2px)";
-
-	
-}
-function closeAlertDelUser(){
-	/* Quita header, section y footer del fondo blur */
-	
-	document.querySelector("header").style.filter = "none";
-	document.querySelector("section").style.filter = "none";
-	document.querySelector("footer").style.filter = "none";
-	document.getElementById("contenedorConfirmacion").style.zIndex = "auto";
-	document.getElementById("contenedorDelUser").style.zIndex = "auto";
-
-	document.getElementById("contenedorConfirmacion").style.display = "none";
-	document.getElementById("contenedorDelUser").style.display = "none";
-	
-}
-function editUserConfirmation(){
-	/* Pone header, section y footer en fondo blur */
-	document.getElementById("contenedorConfirmacion").style.display = "flex";
-	document.getElementById("contenedorConfirmacion").style.zIndex = "1";
-	document.getElementById("contenedorEditUser").style.zIndex = "1";
-	document.getElementById("contenedorEditUser").style.display = "block";
-
-	document.querySelector("header").style.filter = "blur(2px)";
-	document.querySelector("section").style.filter = "blur(2px)";
-	document.querySelector("footer").style.filter = "blur(2px)";
-}
-function cancelAlertEditUser(){
-	/* Quita header, section y footer del fondo blur */
-	document.querySelector("header").style.filter = "none";
-	document.querySelector("section").style.filter = "none";
-	document.querySelector("footer").style.filter = "none";
-	document.getElementById("contenedorConfirmacion").style.zIndex = "auto";
-	document.getElementById("contenedorEditUser").style.zIndex = "auto";
-
-	document.getElementById("contenedorConfirmacion").style.display = "none";
-	document.getElementById("contenedorEditUser").style.display = "none";
-}
-/* FIN JAVASCRIPT ADMINISTRACION USUARIO */
