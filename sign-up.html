@@ -14,15 +14,17 @@
 				<form action="registration.php" method="post" accept-charset="utf-8" autocomplete="off">
 							<h1>Complete the fields</h1>
 						<div id="user">
-							<img src="img/user.svg" alt="user_image"><input type="text" name="user" id="userSign-up" value="" placeholder="User" onchange="resaltarUserField()" required><br>
+							<img src="img/user.svg" alt="user_image"><input type="text" name="user" id="userSign-up" value="" placeholder="User" onchange="checkUser('userSign-up')" required><br>
 							<div id="checkUserText"><span>* Username must have at least 5 characters</span><br></div>
 							<div id="checkUserBBDDText"><span>* This user is already taken</span><br></div>
 							<img src="img/password.svg" alt="password_image"><input type="password" name="password" id="passwordSign-up" value="" placeholder="Password" required><br>
-							<img src="img/password.svg" alt="password_image"><input type="password" name="repeatPassword" id="repeatPasswordSign-up" value="" placeholder="Repeat password" required onchange="resaltarPasswordField()"><br>
+							<img src="img/password.svg" alt="password_image"><input type="password" name="repeatPassword" id="repeatPasswordSign-up" value="" placeholder="Repeat password" required onchange="checkPassword('passwordSign-up', 'repeatPasswordSign-up')"><br>
 							<div id="passLengthText"><span>* Password >= 8 charaters</span><br></div>
 							<div id="passCapitalLetterText"><span>* Password at least 1 capital letter</span><br></div>
 							<div id="passNumberText"><span>* Password at least 1 number</span><br></div>
-							<img src="img/mail.svg" alt="mail_image"><input type="email" name="mail" id="mailSign-up" value="" placeholder="Mail" required onchange="resaltarEmailField()"><br>
+							<div id="blankSpacesText"><span>* Password has blank spaces</span><br></div>
+							<div id="emptyFieldText"><span>* Password field is empty</span><br></div>
+							<img src="img/mail.svg" alt="mail_image"><input type="email" name="mail" id="mailSign-up" value="" placeholder="Mail" required onchange="resaltarEmailField('mailSign-up')"><br>
 						</div>
 						<div id="personalData">
 							<img src="img/nameSurname.png" alt="birthday_image"><input type="text" name="name" id="nameSign-up" value="" placeholder="Name" required><br>
