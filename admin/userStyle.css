@@ -79,7 +79,7 @@ nav ul li ul li{
 
 
 
-/*ESTILOS DE "users.html"*/
+/*ESTILOS DE "users.php"*/
 
 /* ESTILOS DE LA LEYENDA */
 section #contenedorPricipalUser #contenedorSectionLeyenda{
@@ -290,6 +290,24 @@ label{
 	display: none;
 
 }
+#contenedorSelectUser{
+	background-color: #fff;
+	padding: 65px;
+	border-radius: 40px;
+	box-shadow: 1px 1px 11px 2px #000000;
+	position: absolute;
+	display: none;
+	
+}
+#contenedorEditPass{
+	background-color: #fff;
+	padding: 65px;
+	border-radius: 40px;
+	box-shadow: 1px 1px 11px 2px #000000;
+	position: absolute;
+	display: none;
+	
+}
 #contenedorDelUser{
 	background-color: #fff;
 	padding: 65px;
@@ -299,9 +317,30 @@ label{
 	display: none;
 	
 }
-#contenedorDelUser p{
+#buttonsAlertDelUser{
+	margin-top: 1.5em;
+}
+.titleWindow{
 	font-size: 20px;
+	display: inline;
 
+}
+#editPassNewPass{
+	display: none;
+}
+#editPassRepeatPass{
+	display: none;
+}
+#editPassNewPass, #editPassRepeatPass, #editPassPreviousPass{
+	color: black;
+	border: 3px solid #d4d4d4;
+	border-radius: 8px;
+	width: 24em;
+	height: 1.75em;
+	transition: 0.5s ease;
+}
+#contenedorUsers{
+	display: block;
 }
 #alertDelUserYes{
 	background-color: #fff;
