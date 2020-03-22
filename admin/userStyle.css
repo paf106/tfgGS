@@ -39,9 +39,6 @@ nav{
 	width: 100%;
 	background-color: #a0a0a0;	
 }
-#signOut{
-
-}
 nav ul{
 	list-style: none;
 	padding-left: 0;
@@ -98,9 +95,6 @@ section #contenedorPricipalUser #contenedorSectionLeyenda #contenedorLeyenda{
 	justify-content: space-between;
 }
 /* ESTILOS DE LOS NOMBRES DE LAS LEYENDAS */
-#mailLeyenda{
-
-}
 #nameLeyenda,#surnameLeyenda,#mailLeyenda,#userLeyenda,#photoLeyenda{
 	display: inline-block;
 }
@@ -136,20 +130,13 @@ section #contenedorPricipalUser #contenedorSectionUser #contenedorUser{
 	height: 60px;
 }
 /* CONFIGURACION DE LOS APARTADOS DE USUARIO QUE SE COGERAN DE LA BASE DE DATOS */
- #userUser{
-}
-#nameUser,#surnameUser,#mailUser{
-	
-}
 #contenedorUser #nameUser,#surnameUser,#mailUser,#delUserB,#editUserB,#userUser{
 	display: inline-block;
 }
 /* BOTONES DE EDITAR USUARIO Y ELIMINAR */
 
 /* DIV DE BOTONES */
-#buttonsEditDel{
-	
-}
+
 /* BOTON EDITAR USUARIO */
 button{
 	border-radius: 8px;
@@ -160,11 +147,9 @@ button{
 	width: 45px;
 	height: 45px;
 	cursor: pointer;
-	
 }
 #editUserButton:hover{
 	background-color: #ffb900;
-
 }
 #editUserButton:active{
 	background-color: #fde6ab;
@@ -172,8 +157,6 @@ button{
 #editUserButton img{
 	width: 29px;
 	vertical-align: middle;
-	
-	
 }
 /* BOTON ELIMINAR USUARIO */
 #delUserButton{
@@ -182,7 +165,6 @@ button{
 	width: 45px;
 	height: 45px;
 	cursor: pointer;
-	
 }
 #delUserButton:hover{
 	background-color: #d92c0d;
@@ -290,6 +272,15 @@ label{
 	display: none;
 
 }
+#contenedorCreateUser{
+	background-color: #fff;
+	padding: 2em 3em 2em 3em;
+	border-radius: 40px;
+	box-shadow: 1px 1px 11px 2px #000000;
+	position: absolute;
+	display: none;
+	
+}
 #contenedorSelectUser{
 	background-color: #fff;
 	padding: 65px;
@@ -318,11 +309,12 @@ label{
 	
 }
 #buttonsAlertDelUser{
-	margin-top: 1.5em;
+	margin-top: 1em;
 }
 .titleWindow{
-	font-size: 20px;
-	display: inline;
+	font-size: 23px;
+	margin: 0em 0.2em 0.3em 0.2em;
+	display: inline-block;
 
 }
 #editPassNewPass{
@@ -371,32 +363,24 @@ label{
 	color: white;
 }
 /* FIN DE ALERTA BORRAR USUARIO */
-
-
-
-
-
-/*aside div{
-	text-align: center;
+/* Crear usuario */
+#contenedorCreateUser input{
+	color: black;
+	border: 3px solid #d4d4d4;
+	border-radius: 8px;
+	width: 22em;
+	height: 1.75em;
+	margin-bottom: 0.4em;
 }
-aside hr{
-	width: 100%;
+#contenedorCreateUser #checkUserText, #checkUserBBDDText, #passLengthText, #passCapitalLetterText, #passNumberText, #blankSpacesText, #emptyFieldText{
+	display: none;
 }
-aside div img{
-	width: 30px;
-	cursor: pointer;
-}*/
-
-/*FIN DE ESTILOS DE "users.html"*/
-
-
-
-
-/*ESTILOS DE "pcs.html"*/
-/*aside #contenedorBotonesPcs{
-	padding: 19%;
+#contenedorCreateUser select{
+	color: black;
+	border: 3px solid #d4d4d4;
+	border-radius: 8px;
+	width: 23em;
+	height: 2.2em;
+	margin-bottom: 0.4em;
 }
-aside #contenedorBotonesPcs span{
-	color: #e0e0e0;
-}*/
-/*FIN DE ESTILOS DE "pcs.html"*/
+/* Fin de crear usuario */
