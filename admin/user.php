@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-	session_start();
+	session_start();				 
 	//Si no está la sesion iniciada no te deja ir a 'user.php'
 	if (!isset($_SESSION['username'])) {
 		header('location:../index.html');
@@ -43,9 +43,47 @@
 				<button type="button" id="alertEditUserNo" name="AlterEditUser" value="Cancel" onclick="closeAlert('contenedorEditUser')"><b>Cancel</b></button>
 			</div>
 		</div>
-
+		
+		<!--SELECCION PARA CREAR UN USUARIO-->
+		<div id="contenedorCreateUser">
+			<p class="titleWindow"><b>Create user</b></p><br>
+				<form action="createUser.php" method="post" autocomplete="no">
+					<input type="text" name="userCreateUser" id="userCreateUser" value="" placeholder="User" onchange="checkUser('userCreateUser')" required><br>
+					<div id="checkUserText"><span>* Username must have at least 5 characters</span><br></div>
+					<div id="checkUserBBDDText"><span>* This user is already taken</span><br></div>
+					<input type="password" name="passwordCreateUser" id="passwordCreateUser" value="" placeholder="Password" required><br>
+					<input type="password" name="repeatPasswordCreateUser" id="repeatPasswordCreateUser" value="" placeholder="Repeat password" required onchange="checkPassword('passwordCreateUser', 'repeatPasswordCreateUser')"><br>
+					<div id="passLengthText"><span>* Password >= 8 charaters</span><br></div>
+					<div id="passCapitalLetterText"><span>* Password at least 1 capital letter</span><br></div>
+					<div id="passNumberText"><span>* Password at least 1 number</span><br></div>
+					<div id="blankSpacesText"><span>* Password has blank spaces</span><br></div>
+					<div id="emptyFieldText"><span>* Password field is empty</span><br></div>
+					<input type="email" name="mailCreateUser" id="mailCreateUser" value="" placeholder="Mail" required onchange="resaltarEmailField('mailCreateUser')"><br>
+					<input type="text" name="nameCreateUser" id="nameCreateUser" value="" placeholder="Name" required><br>
+					<input type="text" name="surnameCreateUser" id="surnameCreateUser" value="" placeholder="Surname" required><br>
+					<input type="date" name="birthdateCreateUser" id="birthCreateUser" value="" required><br>
+					<select name="countryCreateUser" id="countryCreateUser" style="width: -moz-available;" required>
+						<option value="Spain">Spain</option>
+						<option value="France">France</option>
+						<option value="Germany">Germany</option>
+						<option value="Portugal">Portugal</option>
+						<option value="United Kindom">United Kindom</option>
+						<option value="United States">United States</option>
+						<option value="Switzerland">Switzerland</option>
+						<option value="Turkey">Turkey</option>
+						<option value="Italy">Italy</option>
+						<option value="Sweden">Sweden</option>
+						</select>
+				
+					<div id="buttonsAlertDelUser">
+						<button type="submit" name="Create" id="alertDelUserYes" onclick="checkToSubmit()"><b>Create</b></button>
+						<button type="button" id="alertDelUserNo" name="AlterDelUser" value="No" onclick="closeAlert('contenedorCreateUser')"><b>Cancel</b></button>
+					</div>
+				</form>
+		</div>
 		<!--SELECCION DE USUARIO PARA CAMBIAR CONTRASEÑA -->
 		<div id="contenedorSelectUser">
+			
 			<p class="titleWindow"><b>Select user: </b></p>
 			<select name="userList">
 			<?php 			
@@ -63,7 +101,7 @@
 			?>
 			</select>
 			<div id="buttonsAlertDelUser">
-				<button type="button" id="alertDelUserYes" name="AlertDelUser" value="ok" onclick="openEditPassAlert()"><b>OK</b></button>
+				<button type="submit" id="alertDelUserYes" name="submitUser" value="ok" onclick="openAlert('contenedorEditPass')"><b>OK</b></button>
 				<button type="button" id="alertDelUserNo" name="AlterDelUser" value="No" onclick="closeAlert('contenedorSelectUser')"><b>Cancel</b></button>
 			</div>
 		</div>
@@ -71,11 +109,12 @@
 		<!--CONTENEDOR EDICION DE CONTRASEÑA DE USUARIO -->
 		<div id="contenedorEditPass">
 			<input type="password" name="editPassUser" id="editPassPreviousPass" value="" placeholder="Previous password" onblur="checkPass('editPassPreviousPass')"><br>
+
 			<input type="password" name="editPassUser" id="editPassNewPass" value="" placeholder="New password"><br>
 			<input type="password" name="editPassUser" id="editPassRepeatPass" value="" placeholder="Repeat password">
 			<div id="buttonsAlertDelUser">
 				<button type="button" id="alertDelUserYes" name="AlertDelUser" value="ok"><b>OK</b></button>
-				<button type="button" id="alertDelUserNo" name="AlterDelUser" value="No" onclick="closeAlert('contenedorEditPass')"><b>Cancel</b></button>
+				<button type="button" id="alertDelUserNo" name="AlterDelUser" value="No" onclick="closeAlert('contenedorEditPass'); closeAlert('contenedorSelectUser')"><b>Cancel</b></button>
 			</div>
 		</div>
 
@@ -99,7 +138,7 @@
 					<li><a href="#">Algo</a></li>
 					<li><a href="#">Tools</a>
 						<ul>
-							<li><a href="#">Create user</a></li>
+							<li><a href="#" onclick="openAlert('contenedorCreateUser')">Create user</a></li>
 							<li><a href="#" onclick="openAlert('contenedorSelectUser')">Change password</a></li>
 							<li><a href="#">Change photo</a></li>
 						</ul>
